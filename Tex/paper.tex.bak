@@ -49,7 +49,7 @@ situation is not satisfactory while many talents always tend to get a
 good job via job-hopping, causing orgnizational churn in employees who
 are closely connected to them. In order to simulate this process and
 improve it, we build a human capital model based on Social Network
-Analysis and Markov process. 456
+Analysis and Markov process.
 
 \subsection{Restatement of the Problem}
 \label{sec:restatement-of-the-problem}
@@ -362,9 +362,9 @@ a
 \subsection{Analysis for Task 3}
 \label{sec:analysis-for-task-3}
 
-We assume that the company offers training programs for its employees monthly and newly hired employees start to get their salaries next month after they enter the company. With these two assumption, results can be drawn according to our model through simulation.
+We assume that the company offers training programs for its employees monthly and newly hired employees start to get their salaries next month after they enter the company. With these two assumption, results can be drawn according to our model through simulation. 
 
-Budget can be divided into threee parts: salary budget, training budget and recruiting budget. The budget requirement predicted for next two years is listed in the table below in terms of $\sigma$.
+Budget can be divided into threee parts: salary budget, training budget and recruiting budget. The budget requirement predicted for next two years is listed in the table below in terms of $\sigma$. 
 
 \begin{tabular}{*{4}{c}}\toprule[2pt]
 Total Budget & Salary Budget & Training Budget & Recruiting Budget\\ \midrule
@@ -394,7 +394,7 @@ To analyze the status of positions under different churn rate, we use our model 
   \includegraphics[width=7cm]{task4_s.pdf}\\
   \caption{Training budget and salary budget}\label{t4_t_s}
 \end{figure}
-The churn rate effect the budget of the company as well. The three parts of the bugdet behave differently when churn rate increases. The calculated budget is shown in Figure \ref{t4_r} and Figure \ref{t4_t_s}. Each data point in three charts is an averaged result of 10 predictions and a linear trendline is added to each chart. It is clear that recruiting budget showed in Figure \ref{t4_r} is likely to be proportional to the churn rate while salary budget and training budget showed in Figure \ref{t4_t_s} are likely to be inversely proportional to the churn rate.
+The churn rate effect the budget of the company as well. The three parts of the bugdet behave differently when churn rate increases. The calculated budget is shown in Figure \ref{t4_r} and Figure \ref{t4_t_s}. Each data point in three charts is an averaged result of 10 predictions and a linear trendline is added to each chart. It is clear that recruiting budget showed in Figure \ref{t4_r} is likely to be proportional to the churn rate while salary budget and training budget showed in Figure \ref{t4_t_s} are likely to be inversely proportional to the churn rate. 
 
 To maintain enough employees, the company has to spend more on recruiting. So high turnover rate directly increase the recruiting budget. High turnover rate's effect on training budget and salary budget is more complex. On the one hand, when churn rate goes up, vacancies in the middle level keeps rising due to long recruiting time and low promote rate. On the other hand, the vacancies in lower level remains low because of the short recruiting time. So the full rate of the company decreases when churn rate rises. Since training budget and salary budget are closely related to full rate, both of them decrease when turnover rate goes up.
 \subsection{Analysis for Task 5}
@@ -427,10 +427,10 @@ We apply following changes to our model to simulate the required process:\\
 	\end{center}
 \end{table}
 
-The result of simulation is shown in Figure \ref{t5_p} and Table \ref{t5_p_t}. All the data shown is an average of ten predictions. While the number of positions occupied remains stable with origial conditions, it drops remarkably with modified conditions.
+The result of simulation is shown in Figure \ref{t5_p} and Table \ref{t5_p_t}. All the data shown is an average of ten predictions. While the number of positions occupied remains stable with origial conditions, it drops remarkably with modified conditions.  
 
-We list specific data of each level in Table \ref{t5_p_t}. In the modified case, the numbers of employees are lower than original case especially the those of middle levels. Since there is no external recruiting in modified case, it is obivious that the full rate will decrease due to employees' leave. Although some qualified employees can be promoted into higher level, the high churn rate of the middle level and difficulty of satisfying the promotion conditions make the numbers of middle level employees relatively low. The situation given in that task 5 will cause unrecoverable damage to ICM's HR health. With the full rate of middle level employees lower than 50\%, the HR structure is broken into fragments and the company won't be able to function normally.
-
+We list specific data of each level in Table \ref{t5_p_t}. In the modified case, the numbers of employees are lower than original case especially the those of middle levels. Since there is no external recruiting in modified case, it is obivious that the full rate will decrease due to employees' leave. Although some qualified employees can be promoted into higher level, the high churn rate of the middle level and difficulty of satisfying the promotion conditions make the numbers of middle level employees relatively low. The situation given in that task 5 will cause unrecoverable damage to ICM's HR health. With the full rate of middle level employees lower than 50\%, the HR structure is broken into fragments and the company won't be able to function normally. 
+ 
 
 \section{Advice for HR}
 \label{sec:advice-for-hr}

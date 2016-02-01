@@ -472,9 +472,9 @@ a
 \label{sec:weaknesses}
 
 \begin{itemize}
-\item We assume that the water is still. In fact, streams flow and fluid dynamic is better taken into consideration. The actual situation is much complicated.
-\item The model of the person should be more realistic. In fact, model of human body includes hands, legs or other parts, and the surface of human skin isn't even. 
-\item The condensation of water should be taken into consideration. Water that evaporate become water vapour, and some will condense into water on the bathtub.
+\item We assume that the water is still. In fact, streams flow and fluid dynamic is better taken into consideration. The actual situation is much complicated. 
+\item The model of the person is 
+\item The result has some randomness.
 \end{itemize}
 
 \section{Conclusions}

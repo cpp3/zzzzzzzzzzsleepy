@@ -287,7 +287,12 @@ The boundary value condition of ${\Gamma}_1$ and ${\Gamma}_3$ could be considere
 In the equation, i=1 or 3 and $u_i$ is the temperature of contact material,
 ${\gamma}_i$ is the heat exchange coefficient of ${\Gamma}_i$.
 
-In the equation above, $u_1$, $u_3$ are temperatures of air and bathtub, and they are time-dependant functions. It takes several steps to calculate them.
+In the equation above, $u_3$ is temperature of bathtub, we assume it is unchangeable and as same as initial air temperature. 
+
+While $u_1$ i, the temperature of air, is time-dependant, because water vapor transfer heat to air. We can calculate $u_1$ by calculating the energy of water vapor evaporated in the air. Referencing the deduction of evaporation in the last section,  
+\begin{equation}
+  u_1=u_0+\frac{{C_w}\rho}{{C_a}{{\rho}_a}(x_s-x_0)(1-e^{-\lambda t})
+\end{equation}
 
 Consider the temperature of air, $u_1$. Heat exchange of air consists of two ways, heat conduction and evaporation.
 
@@ -322,6 +327,9 @@ Our strategy focus on two variables, $v_h$ and $u_h$. Nine pairs of data are tes
  9    &0.3             & 30              \\ \hline
 \end{tabular}
 \end{center}
+In each operation, $u_2$ is taken as $33.5^{\circ}\mathrm$ and the initial value condition is $u=35^{\circ}\mathrm$. Then the result performs like this []
+
+Comparing the temperature distribution of each strategy, with least water waste, we choose $v_h=0.2$, $u_h=40$ as the best strategy to keep the temperature.
 
 
 \section{Sensitivity Analysis}
@@ -337,16 +345,16 @@ Our strategy focus on two variables, $v_h$ and $u_h$. Nine pairs of data are tes
 \subsection{Parameters of Person}
 \label{sec:parameters of person}
 \begin{itemize}
-\item
-\item
-\item
+\item Comparing the temperature graph with different shape of the person, we found when the shape gets more regular, $u_h$, $v_h$ becomes decreases relatively.
+\item The larger the person, the more heat between water and the person. That means more heat is called for. $u_h$, $v_h$ for best strategy increases.
+\item When the surface temperature of the person increases, it becomes more closed to water temperature. Then water and person have less heat exchange. Less heat of hot water from faucet is called for. $u_h$, $v_h$ for best strategy decreases.
 \end{itemize}
 
 \subsection{Effects of Motion}
 \label{sec:effects of motion}
 When the person in the bathtub make motions, the heat exchange coefficient between person and water ${\gamma}_2$ increases. That means heat exchange between water and person increases. In another aspect, the air above flow, so that evaporation heat of water increases. Water losses more heat.
 
-The effect is that more heat is called for to keep the temperature. So $u_h$ increases for best strategy to keep the temperature. 
+The effect is that more heat is called for to keep the temperature. So $u_h$ increases for best strategy to keep the temperature.
 
 \subsection{Effects of Bubble Bath Additive}
 \label{sec:effects of bubble bath additive}

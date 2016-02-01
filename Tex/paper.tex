@@ -53,7 +53,13 @@ Analysis and Markov process.
 
 \subsection{Restatement of the Problem}
 \label{sec:restatement-of-the-problem}
-
+We are required to build a mathematical model to solve the problem of heating water in bathtub. Thus we have some subproblems:
+\begin{itemize}
+\item Build a basic model that demonstrate the change of the temperature in the bathtub in space and time without other intervention.
+\item Figure out the influence of parameters such as the shape of the bathtub or the motions made by the person or so.
+\item Propose a strategy to keep the temperature as even as possible.
+\end{itemize}
+In the first step, we build the simplest model. The shape of the bathtub is a cuboid, and the person will stay still. In the second step, the person move slowly and the shape of the bathtub changes. In the third step, we develop the conclusion of the  strategy.
 \subsection{Literature Review}
 \label{sec:literature-review}
 
@@ -147,7 +153,7 @@ Definitions of symbols employed in this paper are listed in
   $V_a$          &Volume of surrounding air \\
   $C_v$          &Evaporation heat of water \\
   $u_2$          &Temperature of person's surface \\
-  
+
   Variable & Description \\
   \hline
   $u$            &Temperature of water \\
@@ -203,24 +209,24 @@ Since the hot water is constant,
 $\Delta m=v{\Delta t}$.
 
 It is obvious that the excess water is as the same value of hot water in any time period.
-Thus $\Delta Q_3$ can be calculated by 
-$\Delta Q_3={\Delta m}Cu$. 
+Thus $\Delta Q_3$ can be calculated by
+$\Delta Q_3={\Delta m}Cu$.
 Also, $\Delta m=v{\Delta t}$.
 
-According to thermal theorem, heat loss in vaporization is proportional to 
-the weight of vapor water. 
+According to thermal theorem, heat loss in vaporization is proportional to
+the weight of vapor water.
 $\Delta Q_4={C_v}\Delta {m_v}$.
 
-Since water could be considered as manifold, according to Green formula, 
+Since water could be considered as manifold, according to Green formula,
 \begin{equation}
  2
 \end{equation}.
 
-Combining the equations above, 
+Combining the equations above,
 \begin{equation}
  3
 \end{equation}.
-Some parameters would be discussed in the following sections. 
+Some parameters would be discussed in the following sections.
 
 \subsection{Initial-Boundary Value Condition}
 \label{initial-boundary value condition}
@@ -228,7 +234,7 @@ Some parameters would be discussed in the following sections.
 Boundary value condition is quite essential in partial differential equations. In our model, water is not a regular research object.
 Thus boundary value condition is complex.
 
-The boundary of water consists of three parts: water-air boundary, water-person boundary, and water-bathtub boundary. We denote them as 
+The boundary of water consists of three parts: water-air boundary, water-person boundary, and water-bathtub boundary. We denote them as
 ${\Gamma}_1$, ${\Gamma}_2$, ${\Gamma}_3$ respectively.
 
 Since person is temperature-constant, the boundary value condition of ${\Gamma}_1$ and ${\Gamma}_3$ could be considered
@@ -237,18 +243,18 @@ as the Dirichlet value condition. That is
  u=u_2, (x,y,z)\in {\Gamma}_2
 \end{equation}.
 
-The boundary value condition of ${\Gamma}_1$ and ${\Gamma}_3$ could be considered as the third boundary value condition approximately. That is 
+The boundary value condition of ${\Gamma}_1$ and ${\Gamma}_3$ could be considered as the third boundary value condition approximately. That is
 \begin{equation}
  k\frac{\vartheta u}{\vartheta n}+{{\gamma}_i}u={{\gamma}_i}{u_i}, (x,y,z)\in {\Gamma}_i
 \end{equation}.
-In the equation, i=1,3, and $u_i$ is the temperature of contact material, 
-${\gamma}_i$ is the heat exchange coefficient of ${\Gamma}_i$. 
+In the equation, i=1,3, and $u_i$ is the temperature of contact material,
+${\gamma}_i$ is the heat exchange coefficient of ${\Gamma}_i$.
 
 
 
 
 
-In our model, the initial value condition is the initial temperature of water. We assume the temperature is equilibrium throughout the bathtub. 
+In our model, the initial value condition is the initial temperature of water. We assume the temperature is equilibrium throughout the bathtub.
 
 \subsection{PDE Solve}
 
@@ -379,8 +385,9 @@ a
 \label{sec:weaknesses}
 
 \begin{itemize}
-\item Limited by the time,we neglected sorts of factors which are not so significant.In fact, the model still has space to be perfected.
-\item The result has some randomness.
+\item We assume that the water is still. In fact, streams flow and fluid dynamic is better taken into consideration. The actual situation is much complicated.
+\item The model of the person should be more realistic. In fact, model of human body includes hands, legs or other parts, and the surface of human skin isn't even.
+\item The condensation of water should be taken into consideration. Water that evaporate become water vapour, and some will condense into water on the bathtub.
 \end{itemize}
 
 \section{Conclusions}

@@ -59,6 +59,22 @@ Q=\iiint\limits_{\Omega}\rho C_{w}(u_f - u_i)dx dy dz
 \end{displaymath}
 
 
+\begin{displaymath}
+Q=\iiint\limits_{\Omega}\rho C_{w}(u_f - u_i)dx dy dz
+\end{displaymath}
+
+\begin{displaymath}
+\begin{aligned}
+\int_{t_1}^{t_2} \iint\limits_{\Gamma}k\frac{\partial u}{\partial n}dsdt & =\iiint\limits_{\Omega}\rho C_{w}(u_f - u_i)dx dy dz\\
+& =\int_{t_1}^{t_2}\iiint\limits_{\Omega}[\frac{\partial}{\partial x}(k\frac{\partial u}{\partial x})+\frac{\partial}{\partial y}(k\frac{\partial u}{\partial y})+\frac{\partial}{\partial z}(k\frac{\partial u}{\partial z})]dxdydx\\
+& = \iiint\limits_{\Omega}\rho C_{w}(\int_{t_1}^{t_2}\frac{\partial u}{\partial t}dt)dxdydz
+\end{aligned}
+\end{displaymath}
+
+\begin{displaymath}
+\rho C_{w}\frac{\partial u}{\partial t}=k\bigtriangleup u+\frac{C_w V_h(u_h-u)}{V}-\frac{C_v g}{V}
+\end{displaymath}
+
 \subsection{Restatement of the Problem}
 \label{sec:restatement-of-the-problem}
 We are required to build a mathematical model to solve the problem of heating water in bathtub. Thus we have some subproblems:
@@ -204,7 +220,7 @@ $\Delta m=v{\Delta t}$.
 It is obvious that the excess water is as the same value of hot water in any time period.
 Thus $\Delta Q_3$ can be calculated by
 $\Delta Q_3={\Delta m}{C_w}u$.
-Also, $\Delta m=v{\Delta t}$. 
+Also, $\Delta m=v{\Delta t}$.
 $\Delta v$ is the weight of hot water each second, $\Delta m$ is the weight of hot water in $\Delta t$.
 
 According to thermal theorem, heat loss in vaporization is proportional to
@@ -223,42 +239,44 @@ Combining the equations above,
 \begin{equation}
  \rho C_{w}\frac{\partial u}{\partial t}=k\bigtriangleup u+\frac{C_w V_h(u_h-u)}{V}-\frac{C_v g}{V}
 \end{equation}.
-In this heat equation, $u_h$ and $v_h$ are two variables that control the strategy. 
+In this heat equation, $u_h$ and $v_h$ are two variables that control the strategy.
 
 Now discuss g, evaporation rate per square. According to empirical formula in [], we know that
 \begin{equation}
  g=\frac{(25+19v)({x_s}-x)}{3600}
 \end{equation}
-in which v is the velocity of air, ${x_s}$ is humidity ratio in saturated air, $x$ is humidity ratio in air. 
-Considering the water vapor rate in the air, it indicates 
+in which v is the velocity of air, ${x_s}$ is humidity ratio in saturated air, $x$ is humidity ratio in air.
+Considering the water vapor rate in the air, it indicates
 \begin{equation}
  x=x_0+\int \frac{Ag}{\rho V_a}dt
 \end{equation}
-in which, $x_0$ is the initial humidity ratio in the air, $\rho$ is density of water, $V_a$ is the total air volume of surrounding air. 
+in which, $x_0$ is the initial humidity ratio in the air, $\rho$ is density of water, $V_a$ is the total air volume of surrounding air.
 
-Combing the two equations and differentiating, we get a ordinary partial equation 
+Combing the two equations and differentiating, we get a ordinary partial equation
 \begin{equation}
  \frac{3600}{25+19v} \frac{dg}{dt}=\frac{A}{\rho {V_a}}
 \end{equation}
-Solving the equation, we get the solution 
+Solving the equation, we get the solution
 \begin{equation}
  g=\frac{(25+19v)({x_s}-{x_0})}{3600}e^{-\lambda t}, \lambda =\frac{A(25+19v)}{3600\rho {V_a}}
 \end{equation}
-  
+
+
 \subsection{Initial-Boundary Value Condition}
 \label{initial-boundary value condition}
 
 Boundary value condition is quite essential in partial differential equations. In our model, water is not a regular research object.
 Thus boundary value condition is complex.
 
-The boundary of water consists of three parts: water-air boundary, water-person boundary, and water-bathtub boundary. We denote them as
-${\Gamma}_1$, ${\Gamma}_2$, ${\Gamma}_3$ respectively.
+The boundary of water consists of four parts: water-air boundary, water-person boundary, water-bathtub boundary, and the square for faucet. We denote them as
+${\Gamma}_1$, ${\Gamma}_2$, ${\Gamma}_3$, ${\Gamma}_4$ respectively.
 
 Since person is temperature-constant, the boundary value condition of ${\Gamma}_1$ and ${\Gamma}_3$ could be considered
 as the Dirichlet value condition. That is
 \begin{equation}
- u=u_2, (x,y,z)\in {\Gamma}_2
-\end{equation}.
+ u=u_i, (x,y,z)\in {\Gamma}_i, i=2.4
+\end{equation}
+In the equation, $u_2$ is the surface temperature of person. We assume it is constant. $u_4$ is the temperature of hot water.
 
 The boundary value condition of ${\Gamma}_1$ and ${\Gamma}_3$ could be considered as the third boundary value condition approximately. That is
 \begin{equation}
@@ -267,9 +285,9 @@ The boundary value condition of ${\Gamma}_1$ and ${\Gamma}_3$ could be considere
 In the equation, i=1,3, and $u_i$ is the temperature of contact material,
 ${\gamma}_i$ is the heat exchange coefficient of ${\Gamma}_i$.
 
-In the equation above, $u_1$, $u_3$ are temperatures of air and bathtub, they are time-dependant functions. It would take several steps to calculate them.
+In the equation above, $u_1$, $u_3$ are temperatures of air and bathtub, they are time-dependant functions. It takes several steps to calculate them.
 
-Consider the temperature of air, $u_1$. Heat change of air consists of two aspects, heat conduction and evaporation.
+Consider the temperature of air, $u_1$. Heat change of air consists of two ways, heat conduction and evaporation.
 
 In our model, we assume the temperature of water is equilibrium throughout the bathtub initially.
 
@@ -294,8 +312,8 @@ Then we input the heat equation and initial-boundary value conditions. Boundary 
 \subsection{Parameters of Bathtub}
 \label{sec:parameters of bathtub}
 \begin{itemize}
-\item
-\item
+\item We change the shape of the bathtub from square to sphere and elliptical with the same strategy. The temperature graphic shows that sphere is the most proper shape for keeping water temperature. Square performs the worst on keeping temperature. However, temperature of square bathtub is more evenly than others.
+\item We change the volume of the bathtub without changing its proportion. The result shows that with the same $v_h$, 
 \end{itemize}
 
 \subsection{Parameters of Person}

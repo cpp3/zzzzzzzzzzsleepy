@@ -179,7 +179,7 @@ in the bathtub.
 
 Figure 1 shows thermal analysis of water in bathtub.
 
-First,we assume that the heat change of all water in a tiny time $\Delta t$ is $\Delta Q$.
+First,we assume that the heat change of all water in a tiny time $\Delta t$ from $t_1$ to $t_2$ is $\Delta Q$.
 As shown in Figure 1, water in the bathtub have heat exchange with air, the person, and the bathtub.
 In addition, heat changes when the hot water flow in and the excess water flow out.
 Thus $\Delta Q$ is divided into five parts, i.e.
@@ -203,7 +203,7 @@ Fourier theorem indicates that,
 \begin{equation}
  dQ=-k\frac{\vartheta u}{\vartheta n}dSdt
 \end{equation}
-holds for the heat flow through surface with square of dS.
+holds for the heat flow through surface with square of dS, as shown in Figure 2.
 In the equation, k is thermal conductivity, $\frac{\vartheta u}{\vartheta n}$ is the derivative of u along the normal line. Thus, after integration of dQ by time and space
 \begin{equation}
  \Delta Q_1=int_{t_1}^{t_2}[{int_{\Gamma}}k\frac{\vartheta u}{\vartheta n}dS]dt
@@ -223,30 +223,30 @@ $\Delta Q_3={\Delta m}{C_w}u$.
 Also, $\Delta m=v{\Delta t}$.
 $\Delta v$ is the weight of hot water each second, $\Delta m$ is the weight of hot water in $\Delta t$.
 
-According to thermal theorem, heat loss in vaporization is proportional to
-the weight of vapor water.
+According to thermal theorem, heat loss in vaporization is proportional to the weight of vapor water.
 $\Delta Q_4={C_v}\Delta {m_v}$.
 $\Delta {m_v}$ is the weight of evaporation water in $\Delta t$, $\Delta {C_v}$ is evaporation heat of water.
 
 Since water could be considered as manifold, according to Green formula,
 \begin{equation}
- \int_{t_1}^{t_2} \iint\limits_{\Gamma}k\frac{\partial u}{\partial n}dsdt & =\iiint\limits_{\Omega}\rho C_{w}(u_f - u_i)dx dy dz\\
-& =\int_{t_1}^{t_2}\iiint\limits_{\Omega}[\frac{\partial}{\partial x}(k\frac{\partial u}{\partial x})+\frac{\partial}{\partial y}(k\frac{\partial u}{\partial y})+\frac{\partial}{\partial z}(k\frac{\partial u}{\partial z})]dxdydx\\
-& = \iiint\limits_{\Omega}\rho C_{w}(\int_{t_1}^{t_2}\frac{\partial u}{\partial t}dt)dxdydz
+% \int_{t_1}^{t_2} \iint\limits_{\Gamma}k\frac{\partial u}{\partial n}dsdt & =\iiint\limits_{\Omega}\rho C_{w}(u_f - u_i)dx dy dz\\
+%& =\int_{t_1}^{t_2}\iiint\limits_{\Omega}[\frac{\partial}{\partial x}(k\frac{\partial u}{\partial x})+\frac{\partial}{\partial y}(k\frac{\partial u}{\partial y})+\frac{\partial}{\partial z}(k\frac{\partial u}{\partial z})]dxdydx\\
+%& = \iiint\limits_{\Omega}\rho C_{w}(\int_{t_1}^{t_2}\frac{\partial u}{\partial t}dt)dxdydz%
 \end{equation}.
 
 Combining the equations above,
 \begin{equation}
- \rho C_{w}\frac{\partial u}{\partial t}=k\bigtriangleup u+\frac{C_w V_h(u_h-u)}{V}-\frac{C_v g}{V}
+% \rho C_{w}\frac{\partial u}{\partial t}=k\bigtriangleup u+\frac{C_w V_h(u_h-u)}{V}-\frac{C_v g}{V}%
 \end{equation}.
 In this heat equation, $u_h$ and $v_h$ are two variables that control the strategy.
 
-Now discuss g, evaporation rate per square. According to empirical formula in [], we know that
+Now discuss g, evaporation rate per square.
+As Figure 3 shows, water evaporate into air and air humidity increases, until it saturate. According to empirical formula in [], we know that
 \begin{equation}
  g=\frac{(25+19v)({x_s}-x)}{3600}
 \end{equation}
 in which v is the velocity of air, ${x_s}$ is humidity ratio in saturated air, $x$ is humidity ratio in air.
-Considering the water vapor rate in the air, it indicates
+Considering the humidity ratio in the air, it indicates
 \begin{equation}
  x=x_0+\int \frac{Ag}{\rho V_a}dt
 \end{equation}
@@ -281,7 +281,7 @@ In the equation, $u_2$ is the surface temperature of person. We assume it is con
 The boundary value condition of ${\Gamma}_1$ and ${\Gamma}_3$ could be considered as the third boundary value condition approximately. That is
 \begin{equation}
  k\frac{\vartheta u}{\vartheta n}+{{\gamma}_i}u={{\gamma}_i}{u_i}, (x,y,z)\in {\Gamma}_i
-\end{equation}.
+\end{equation}
 In the equation, i=1,3, and $u_i$ is the temperature of contact material,
 ${\gamma}_i$ is the heat exchange coefficient of ${\Gamma}_i$.
 
@@ -291,8 +291,8 @@ Consider the temperature of air, $u_1$. Heat change of air consists of two ways,
 
 In our model, we assume the temperature of water is equilibrium throughout the bathtub initially.
 
-\subsection{PDE Solve}
-\label{sec:PDE solve}
+\subsection{PDE Solution}
+\label{sec:PDE solution}
 Since our equations are complex and the region is quite irregular, it's impossible to get a regular solution. Finite element method is normally adopted to deal with this problem.
 
 We use Partial Differential Equation Toolbox in matlab to solve our equations. Partial Differential Equation Toolbox makes use of finite element method to discrete irregular geometry and calculate a relatively precise solution. get solution of temperature corresponding to different $u_h$ and $v_h$. By comparing temperature distribution, we choose proper parameters as the best strategy.
@@ -304,6 +304,17 @@ Then we input the heat equation and initial-boundary value conditions. Boundary 
 \section{Results and Analysis}
 \label{sec:performance-and-analysis}
 
+Our strategy focus on two variables, $v_h$ and $u_h$. Several pairs of data are tested to find the best strategy.
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+      &$v_h$  &$u_h$        \\ \hline
+ 1    &             & 5              \\ \hline
+ 2    &             & 1              \\ \hline
+ 3    &             & 3              \\ \hline
+ 4    &             & 4              \\ \hline
+\end{tabular}
+\end{center}
 
 
 \section{Sensitivity Analysis}
@@ -312,8 +323,8 @@ Then we input the heat equation and initial-boundary value conditions. Boundary 
 \subsection{Parameters of Bathtub}
 \label{sec:parameters of bathtub}
 \begin{itemize}
-\item We change the shape of the bathtub from square to sphere and elliptical with the same strategy. The temperature graphic shows that sphere is the most proper shape for keeping water temperature. Square performs the worst on keeping temperature. However, temperature of square bathtub is more evenly than others.
-\item We change the volume of the bathtub without changing its proportion. The result shows that with the same $v_h$, 
+\item We change the shape of the bathtub to sphere and elliptical with the same strategy. The temperature graphic shows that sphere is the most proper shape for keeping water temperature. Square performs the worst on keeping temperature. However, temperature of square bathtub is more evenly than others.
+\item We change the volume of the bathtub without changing the proportion. The result as following Table [] shows that with the same $v_h$, $u_h$ increases as volume increases; with the same $u_h$, $v_h$ increased as volume increases.
 \end{itemize}
 
 \subsection{Parameters of Person}
@@ -326,6 +337,9 @@ Then we input the heat equation and initial-boundary value conditions. Boundary 
 
 \subsection{Effects of Motion}
 \label{sec:effects of motion}
+When the person in the bathtub make motions, the heat exchange coefficient between person and water ${\gamma}_2$ increases. That means heat exchange between water and person increases. 
+ 
+In another aspect, the air above flow, so that evaporation heat of water increases.
 
 \subsection{Effects of Bubble Bath Additive}
 \label{sec:effects of bubble bath additive}
@@ -337,10 +351,8 @@ Then we input the heat equation and initial-boundary value conditions. Boundary 
 \label{sec:strengths}
 
 \begin{itemize}
-\item Our model make fully use of the theory of multi-layer networks so
-  that it quantizes the relation accurately and reasonably.
-\item Our model excellently proves the interaction among these
-  factors:leave probability, promotion probability and productivity.
+\item Our model make good use of thermology knowledge so it can reflect the situation in the real world realistically.
+\item Our model build a 3D geometry to simulate the research object so 
 \item The network we built include both microcosmic part and
   macrocosmic part, and they react to each other.
 \item Our model proves the effect of time.

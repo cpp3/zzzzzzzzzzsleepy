@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {subsection}{\numberline {1.1}Restatement of the Problem}{2}
+\contentsline {section}{\numberline {2}Assumptions and Justifications}{3}
+\contentsline {section}{\numberline {3}Water in the Bathtub Model}{3}
+\contentsline {subsection}{\numberline {3.1}Model Overview}{4}
+\contentsline {subsection}{\numberline {3.2}Heat Equation}{4}
+\contentsline {subsection}{\numberline {3.3}Initial-Boundary Value Condition}{5}
+\contentsline {subsection}{\numberline {3.4}PDE Solution}{6}
+\contentsline {section}{\numberline {4}Results and Analysis}{6}
+\contentsline {section}{\numberline {5}Sensitivity Analysis}{7}
+\contentsline {subsection}{\numberline {5.1}Parameters of Bathtub}{7}
+\contentsline {subsection}{\numberline {5.2}Parameters of Person}{7}
+\contentsline {subsection}{\numberline {5.3}Effects of Motion}{7}
+\contentsline {subsection}{\numberline {5.4}Effects of Bubble Bath Additive}{7}
+\contentsline {section}{\numberline {6}Strengths and Weaknesses}{7}

@@ -13,5 +13,5 @@
 \contentsline {subsection}{\numberline {6.2}Parameters of Person}{9}
 \contentsline {subsection}{\numberline {6.3}Effects of Motion}{10}
 \contentsline {subsection}{\numberline {6.4}Effects of Bubble Bath Additive}{10}
-\contentsline {section}{\numberline {7}Strengths and Weaknesses}{10}
+\contentsline {section}{\numberline {7}Strengths and Weaknesses}{11}
 \contentsline {section}{\numberline {8}Non-technical explanation}{12}

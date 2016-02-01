@@ -138,18 +138,27 @@ Definitions of symbols employed in this paper are listed in
   ${\gamma}_3$   &Heat exchange coefficient between water and bathtub \\
   $C_w$          &Specific heat capacity of water \\
   $V$            &Total volume of water \\
+  $v$            &Speed of air\\
   $x_s$          &Humidity ratio in saturated air \\
+  $x$            &Humidity ratio in the air \\
   $x_0$          &Initial humidity ratio in the air \\
   $A$            &Square of water surface \\
   $V_a$          &Volume of surrounding air \\
   $C_v$          &Evaporation heat of water \\
   $u_2$          &Temperature of person's surface \\
+  $g$            &???\\
+\end{tabular}
+\end{table}
 
+\textbf{Table 2}.
+\begin{table}
+\begin{tabular}{l|l}
   Variable & Description \\
   \hline
   $u$            &Temperature of water \\
   $u_1$          &Temperature of air \\
   $u_3$          &Temperature of bathtub \\
+  $u_h$          &Temperature of hot water from faucet \\
 \end{tabular}
 \end{table}
 
@@ -338,8 +347,8 @@ Comparing the temperature distribution of each strategy, with least water waste,
 \subsection{Parameters of Bathtub}
 \label{sec:parameters of bathtub}
 \begin{itemize}
-\item We change the shape of the bathtub to sphere and elliptical with the same strategy. The temperature graphic shows that sphere is the most proper shape for keeping water temperature. Square performs the worst on keeping temperature. However, temperature of square bathtub is more evenly than others.
-\item We change the volume of the bathtub without changing the proportion. The result as following Table [] shows that with the same $v_h$, $u_h$ increases as volume increases; with the same $u_h$, $v_h$ increased as volume increases.
+\item We change the shape of the bathtub to sphere and cylinder with the same strategy. The temperature graph shows that sphere is the properest shape for keeping water temperature. The cylinder is proved to be the worst on keeping temperature. However, temperature of cylinder bathtub is evener than others.
+\item We change the volume of the bathtub without changing the proportion. The result as following Table [] shows that with the same $v_h$, $u_h$ increases as volume increases; with the same $u_h$, $v_h$ increases as volume increases.
 \end{itemize}
 
 \subsection{Parameters of Person}
@@ -352,15 +361,19 @@ Comparing the temperature distribution of each strategy, with least water waste,
 
 \subsection{Effects of Motion}
 \label{sec:effects of motion}
-When the person in the bathtub make motions, the heat exchange coefficient between person and water ${\gamma}_2$ increases. That means heat exchange between water and person increases. In another aspect, the air above flow, so that evaporation heat of water increases. Water losses more heat.
+When the person in the bathtub makes motions, the heat exchange coefficient between the person and water ${\gamma}_2$ increases. That means heat exchange between water and the person increases. In another aspect, the air above flows, so that evaporation heat of water increases. Water loses more heat.
 
+<<<<<<< HEAD
 The effect is that more heat is called for to keep the temperature. So $u_h$ increases for best strategy to keep the temperature.
+=======
+The effect is that more heat is needed to keep the temperature, consequently $u_h$ as the best strategy increases to keep the temperature. 
+>>>>>>> origin
 
 \subsection{Effects of Bubble Bath Additive}
 \label{sec:effects of bubble bath additive}
-When bubble bath additive is added while initially filling the bathtub, bubble stay on the surface and restraint the evaporation of water to air. So water losses less heat.
+When bubble bath additive is added while initially filling the bathtub, bubbles stay on the surface and the evaporation of water to air is limitted. So water loses less heat.
 
-The effect is that less heat is called for to keep the temperature. So $u_h$ decreases for best strategy to keep the temperature.
+The effect is that less heat is needed to keep the temperature. So $u_h$ for best strategy decreases to keep the temperature.
 
 \section{Strengths and Weaknesses}
 \label{sec:strengths-and-weaknesses}
@@ -371,7 +384,7 @@ The effect is that less heat is called for to keep the temperature. So $u_h$ dec
 \begin{itemize}
 \item Our model make good use of thermology knowledge so it can reflect the situation in the real world realistically.
 \item Our model build a 3D geometry to simulate the research object so
-\item The network we built include both microcosmic part and
+\item The network we built includes both microcosmic part and
   macrocosmic part, and they react to each other.
 \item Our model proves the effect of time.
 \end{itemize}
@@ -389,7 +402,22 @@ The effect is that less heat is called for to keep the temperature. So $u_h$ dec
 % the reference
 \begin{thebibliography}{99}
 
-\bibitem{}
+
+\bibitem{1} http://www.engineeringtoolbox.com
+
+\bibitem{2} Umesh Gaur, Suk-fai Lau, Brent B. Wunderlich, and Bernhard Wunderlich, Heat Capacity and Other Thermodynamic Properties of Linear Macromolecules VI. Acrylic Polymers, J.Phys.Chem.Ref.Data, Vol.11, No4, 1982.
+
+\bibitem{3} https://www.professionalplastics.com/professionalplastics/content/castacrylic.pdf
+
+\bibitem{4} A. Khabari, M. Zenouzi, T. O’Connor and A. Rodas, Natural and Forced Convective Heat Transfer Analysis of Nanostructured Surface, Proceedings of the World Congress on Engineering 2014 Vol I, WCE 2014, July 2 - 4, 2014, London, U.K.
+
+\bibitem{5} http://www.nzifst.org.nz/unitoperations/httrtheory3.htm
+
+\bibitem{6} http://www.engineersedge.com/heat\_transfer/convective\_heat\_transfer\_coefficients\_\_13378.htm
+
+\bibitem{7} de Dear. Richard J., Arens. Edward A, Zhang Hui and Oguro. Masayuki, Convective and radiative heat transfer coefficients for individual human body segments, Int J Biometeorol (1997) 40:141–156
+
+\bibitem{8} http://www.hcheattransfer.com/coefficients.html
 
 \end{thebibliography}
 

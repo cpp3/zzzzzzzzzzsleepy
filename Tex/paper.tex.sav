@@ -53,6 +53,9 @@ Analysis and Markov process.
 
 \subsection{Restatement of the Problem}
 \label{sec:restatement-of-the-problem}
+<<<<<<< HEAD
+
+=======
 We are required to build a mathematical model to solve the problem of heating water in bathtub. Thus we have some subproblems:
 \begin{itemize}
 \item Build a basic model that demonstrate the change of the temperature in the bathtub in space and time without other intervention.
@@ -60,6 +63,7 @@ We are required to build a mathematical model to solve the problem of heating wa
 \item Propose a strategy to keep the temperature as even as possible.
 \end{itemize}
 In the first step, we build the simplest model. The shape of the bathtub is a cuboid, and the person will stay still. In the second step, the person move slowly and the shape of the bathtub changes. In the third step, we develop the conclusion of the  strategy.
+>>>>>>> origin
 \subsection{Literature Review}
 \label{sec:literature-review}
 
@@ -124,6 +128,19 @@ regard it as stable in our model.
 Partial differential equations are widely used in natural science, engineering and economical management.
 It is natural to use partial differential equation to solve this physical problem.
 
+<<<<<<< HEAD
+In our model, five parts accounts for heat transfer of water: heat exchange between water and air, heat
+exchange between water and the person, heat exchange between water and the bathtub, heat of hot water from the
+faucet and heat of water flow outside. According to thermology, we conduct the equation
+of water temperature in the bathtub. The initial-boundary value condition could be conducted according to
+Fourier theorem, vaporization equation[ ].
+
+Since the equation is a relatively complex 3D partial differential equation, we use matlab to solve it.
+We build a geometry as the bathtub. By finite element method, the geometry discrete into several parts.
+The solution of each part is considered to be a relatively precise value solution.
+
+=======
+>>>>>>> origin
 Definitions of symbols employed in this paper are listed in
 \textbf{Table 1}.
 \begin{table}
@@ -142,6 +159,36 @@ Definitions of symbols employed in this paper are listed in
 \end{tabular}
 \end{table}
 
+<<<<<<< HEAD
+\subsection{Heat equation}
+\label{sec:heat equation}
+
+In this part, we use physical theorem to conduct the heat conduction equation
+in the bathtub.
+
+First, the heat change in a micro time \Delta t is \Delta Q. As shown in Figure 1,
+Water in the bathtub have heat exchange with air, the person, and the bathtub.
+In addition, heat changes when the hot water flow in and the excess water flow out. 
+Thus \Delta Q is divided into five parts, i.e. 
+\begin{equation}
+ \Delta Q=\Delta Q_1+\Delta Q_2+\Delta Q_3+\Delta Q_4-\Delta Q_5
+\end{equation}
+in which \Delta Q_1 is heat transferred from the air, \Delta Q_2 is the heat 
+transferred from the person, \Delta Q_3 is the heat transferred from the 
+bathtub, \Delta Q_4 is the heat of the hot water from the faucet in \Delta t, 
+\Delta Q_5 is the heat of the water flow away in \Delta t.
+
+In general, Fourier theorem indicates that 
+\begin{equation}
+\Delta Q=C*\rho (t-t_0)
+\end{equation}
+
+Considering the right side of the heat balance equation. Since heat exchange 
+between water and air is consisted of thermal conduction and heat loss in 
+vaporization. Thus $Q_1=Q_1c-Q_1v$, in which $Q_1c$ and $Q_1v$ is the heat 
+transferred from the air and heat loss in vaporization respectively. For $Q_1c$, 
+$Q_2$ and $Q_3$,
+=======
 \subsection{Human Performance Model}
 \label{sec:human-model}
 
@@ -155,6 +202,7 @@ and $A_{po_i}$ for each employee $i$. For each of the four parameters,
 it goes from 0 to 1. The statues are used for calculating the
 probability that employee can promote. Meanwhile, they influence
 leaving probability and team cohesiveness as well.
+>>>>>>> origin
 
 It is obvious that some of the parameters are somehow more important
 than others. So in an effort to make our model more accurate and
@@ -472,8 +520,12 @@ a
 \label{sec:weaknesses}
 
 \begin{itemize}
+<<<<<<< HEAD
+\item Limited by the time,we neglected sorts of factors which are not so significant.In fact, the model still has space to be perfected.
+=======
 \item We assume that the water is still. In fact, streams flow and fluid dynamic is better taken into consideration. The actual situation is much complicated. 
 \item The model of the person is 
+>>>>>>> origin
 \item The result has some randomness.
 \end{itemize}
 

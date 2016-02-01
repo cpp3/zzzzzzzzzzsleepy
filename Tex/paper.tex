@@ -42,38 +42,6 @@
 
 \section{Introduction}
 \label{sec:introduction}
-\begin{displaymath}
-Q=\iiint\limits_{\Omega}\rho C_{w}(u_f - u_i)dx dy dz
-\end{displaymath}
-
-\begin{displaymath}
-\begin{aligned}
-\int_{t_1}^{t_2} \iint\limits_{\Gamma}k\frac{\partial u}{\partial n}dsdt & =\iiint\limits_{\Omega}\rho C_{w}(u_f - u_i)dx dy dz\\
-& =\int_{t_1}^{t_2}\iiint\limits_{\Omega}[\frac{\partial}{\partial x}(k\frac{\partial u}{\partial x})+\frac{\partial}{\partial y}(k\frac{\partial u}{\partial y})+\frac{\partial}{\partial z}(k\frac{\partial u}{\partial z})]dxdydx\\
-& = \iiint\limits_{\Omega}\rho C_{w}(\int_{t_1}^{t_2}\frac{\partial u}{\partial t}dt)dxdydz
-\end{aligned}
-\end{displaymath}
-
-\begin{displaymath}
-\rho C_{w}\frac{\partial u}{\partial t}=k\bigtriangleup u+\frac{C_w V_h(u_h-u)}{V}-\frac{C_v g}{V}
-\end{displaymath}
-
-
-\begin{displaymath}
-Q=\iiint\limits_{\Omega}\rho C_{w}(u_f - u_i)dx dy dz
-\end{displaymath}
-
-\begin{displaymath}
-\begin{aligned}
-\int_{t_1}^{t_2} \iint\limits_{\Gamma}k\frac{\partial u}{\partial n}dsdt & =\iiint\limits_{\Omega}\rho C_{w}(u_f - u_i)dx dy dz\\
-& =\int_{t_1}^{t_2}\iiint\limits_{\Omega}[\frac{\partial}{\partial x}(k\frac{\partial u}{\partial x})+\frac{\partial}{\partial y}(k\frac{\partial u}{\partial y})+\frac{\partial}{\partial z}(k\frac{\partial u}{\partial z})]dxdydx\\
-& = \iiint\limits_{\Omega}\rho C_{w}(\int_{t_1}^{t_2}\frac{\partial u}{\partial t}dt)dxdydz
-\end{aligned}
-\end{displaymath}
-
-\begin{displaymath}
-\rho C_{w}\frac{\partial u}{\partial t}=k\bigtriangleup u+\frac{C_w V_h(u_h-u)}{V}-\frac{C_v g}{V}
-\end{displaymath}
 
 \subsection{Restatement of the Problem}
 \label{sec:restatement-of-the-problem}
@@ -83,8 +51,53 @@ We are required to build a mathematical model to solve the problem of heating wa
 \item Figure out the influence of parameters such as the shape of the bathtub or the motions made by the person or so.
 \item Propose a strategy to keep the temperature as even as possible.
 \end{itemize}
-In the first step, we build the simplest model. The shape of the bathtub is a cuboid, and the person will stay still. In the second step, the person move slowly and the shape of the bathtub changes. In the third step, we develop the conclusion of the  strategy.
+In the first step, we build the simplest model. The shape of the bathtub is a cuboid, and the person will stay still. In the second step, the person move slowly and the shape of the bathtub changes. In the third step, we develop the conclusion of the strategy.
 
+\section{Terminology}
+\label{sec:terminology}
+
+Definitions of symbols employed in this paper are listed in
+\textbf{Table 1}.
+\begin{table}
+\begin{tabular}{l|l}
+  Constant & Description \\
+  \hline
+  $k$            &Thermal conductivity of water \\
+  $\rho$         &Density of water \\
+  ${\rho}_a$     &Density of air \\
+  ${\gamma}_1$   &Heat exchange coefficient between water and air \\
+  ${\gamma}_2$   &Heat exchange coefficient between water and person \\
+  ${\gamma}_3$   &Heat exchange coefficient between water and bathtub \\
+  $C_w$          &Specific heat capacity of water \\
+  $C_a$          &Specific heat capacity of air \\
+  $V$            &Total volume of water \\
+  $V_a$          &Total volume of air above the water \\
+  $v$            &Flow velocity of air\\
+  $x_s$          &Humidity ratio in saturated air \\
+  $x$            &Humidity ratio in the air \\
+  $x_0$          &Initial humidity ratio in the air \\
+  $A$            &Square of water surface \\
+  $V_a$          &Volume of surrounding air \\
+  $C_v$          &Evaporation heat of water \\
+\end{tabular}
+\end{table}
+
+\textbf{Table 2}.
+\begin{table}
+\begin{tabular}{l|l}
+  Variable & Description \\
+  \hline
+  $t$            &time \\
+  $u$            &Temperature of water \\
+  $u$            &Temperature of water when t=0 \\
+  $u_1$          &Temperature of air \\
+  $u_2$          &Temperature of person's surface \\
+  $u_3$          &Temperature of bathtub \\
+  $u_h$          &Temperature of hot water from faucet \\
+  $v_h$          &Velocity of hot water from faucet \\
+  $g$            &Evaporation heat of water\\
+\end{tabular}
+\end{table}
 
 \section{Assumptions and Justifications}
 \label{sec:assumptions-and-justifications}
@@ -125,42 +138,7 @@ regard it as stable in our model.
 % the main section of the paper
 \section{Water in the Bathtub Model}
 \label{sec:human-capital-model}
-Definitions of symbols employed in this paper are listed in
-\textbf{Table 1}.
-\begin{table}
-\begin{tabular}{l|l}
-  Constant & Description \\
-  \hline
-  $k$            &Thermal conductivity of water \\
-  $\rho$         &Density of water \\
-  ${\gamma}_1$   &Heat exchange coefficient between water and air \\
-  ${\gamma}_2$   &Heat exchange coefficient between water and person \\
-  ${\gamma}_3$   &Heat exchange coefficient between water and bathtub \\
-  $C_w$          &Specific heat capacity of water \\
-  $V$            &Total volume of water \\
-  $v$            &Speed of air\\
-  $x_s$          &Humidity ratio in saturated air \\
-  $x$            &Humidity ratio in the air \\
-  $x_0$          &Initial humidity ratio in the air \\
-  $A$            &Square of water surface \\
-  $V_a$          &Volume of surrounding air \\
-  $C_v$          &Evaporation heat of water \\
-  $u_2$          &Temperature of person's surface \\
-  $g$            &???\\
-\end{tabular}
-\end{table}
 
-\textbf{Table 2}.
-\begin{table}
-\begin{tabular}{l|l}
-  Variable & Description \\
-  \hline
-  $u$            &Temperature of water \\
-  $u_1$          &Temperature of air \\
-  $u_3$          &Temperature of bathtub \\
-  $u_h$          &Temperature of hot water from faucet \\
-\end{tabular}
-\end{table}
 
 \subsection{Model Overview}
 \label{sec:model-overview}
@@ -183,13 +161,17 @@ The solution of each part is considered to be a relatively precise value solutio
 \subsection{Heat Equation}
 \label{sec:heat equation}
 
-In this part, we use physical theorem to deduce the heat conduction equation
-in the bathtub.
+In this part, we use physical theorem to deduce the heat conduction equation in the bathtub.
 
 Figure 1 shows thermal analysis of water in bathtub.
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=8cm]{2.pdf}\\
+  \caption{Thermal Analysis of Water}\label{1_p}
+\end{figure}
 
 First, we assume that the heat change of all the water in a tiny time $\Delta t$ from $t_1$ to $t_2$ is $\Delta Q$.
-As it shown in Figure 1, heat of water in the bathtub exchanges with air, the person and the bathtub.
+As shown in Figure 1, heat of water in the bathtub exchanges with air, the person and the bathtub.
 In addition, heat changes when the hot water flow in and the excess water flow out.
 Thus $\Delta Q$ is divided into five parts, i.e.
 \begin{equation}
@@ -205,14 +187,19 @@ Then the temperature changes according to the equation
 \begin{equation}
  Q=\iiint\limits_{\Omega}\rho C_{w}(u_f - u_i)dx dy dz
 \end{equation}
-, in which $\Omega$ is the region of water, $\rho$ represents the density of water, $u_f$ stands for the final temperature when t=$t_2$, and $u_i$ is the initial temperature when t=$t_1$.
+in which $\Omega$ is the region of water, $\rho$ represents the density of water, $u_f$ stands for the final temperature when t=$t_2$, and $u_i$ is the initial temperature when t=$t_1$.
 
 Considering the right side of equation 1.
 Fourier theorem indicates that,
 \begin{equation}
  dQ=-k\frac{\partial u}{\partial n}dSdt
 \end{equation}
-holds for the heat flow through surface with square of dS, as it shown in Figure 2.
+holds for the heat flow through surface with square of dS, as it shows in Figure 2.
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=8cm]{1.pdf}\\
+  \caption{Thermal Analysis}\label{2_p}
+\end{figure}
 In the equation, k is thermal conductivity, $\frac{\partial u}{\partial n}$ is the derivative of u along the normal line. Thus, after integration of dQ by time and space
 \begin{equation}
  \Delta Q_1=\int_{t_1}^{t_2}[{\int_{\Gamma}}k\frac{\partial u}{\partial n}dS]dt
@@ -262,6 +249,11 @@ Considering the humidity ratio in the air, it indicates
  x=x_0+\int \frac{Ag}{\rho V_a}dt
 \end{equation}
 in which $x_0$ is the initial humidity ratio in the air, $\rho$ is the density of water, $V_a$ is the total volume of surrounding air.
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=8cm]{3.pdf}\\
+  \caption{Evaporation}\label{3_p}
+\end{figure}
 
 Combing and differentiating two equations, we get an ordinary partial equation
 \begin{equation}
@@ -296,11 +288,11 @@ The boundary value condition of ${\Gamma}_1$ and ${\Gamma}_3$ could be considere
 In the equation, i=1 or 3 and $u_i$ is the temperature of contact material,
 ${\gamma}_i$ is the heat exchange coefficient of ${\Gamma}_i$.
 
-In the equation above, $u_3$ is temperature of bathtub, we assume it is unchangeable and as same as initial air temperature. 
+In the equation above, $u_3$ is temperature of bathtub, we assume it is unchangeable and as same as initial air temperature.
 
-While $u_1$ i, the temperature of air, is time-dependant, because water vapor transfer heat to air. We can calculate $u_1$ by calculating the energy of water vapor evaporated in the air. Referencing the deduction of evaporation in the last section,  
+While $u_1$ i, the temperature of air, is time-dependant, because water vapor transfer heat to air. We can calculate $u_1$ by calculating the energy of water vapor evaporated in the air. Referencing the deduction of evaporation in the last section,
 \begin{equation}
-  u_1=u_0+\frac{{C_w}\rho}{{C_a}{{\rho}_a}(x_s-x_0)(1-e^{-\lambda t})
+  u_1=u_0+\frac{C_w\rho}{C_a{{\rho}_a}} (x_s-x_0)(1-e^{-\lambda t})
 \end{equation}
 
 Consider the temperature of air, $u_1$. Heat exchange of air consists of two ways, heat conduction and evaporation.
@@ -313,7 +305,12 @@ Since our equations are complex and the region is quite irregular, it's impossib
 
 We use Partial Differential Equation Toolbox in matlab to solve our equations. Partial Differential Equation Toolbox makes use of finite element method to separate irregular geometry and calculate a relatively precise solution, get solution of temperature corresponding to different $u_h$ and $v_h$. By comparing temperature distribution, we choose proper parameters as the best strategy.
 
-First, we build a 3D geometry model to simulate a proper-size bathtub, as it shown in Figure 2. Matlab divided the geometry into several elements.
+First, we build a 3D geometry model to simulate a proper-size bathtub, as it shown in Figure 4. Matlab divided the geometry into several elements.
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=8cm]{4.png}\\
+  \caption{3D geometry of water}\label{4_p}
+\end{figure}
 
 Then we input the heat equation and initial-boundary value conditions. Boundary value conditions are different in three parts.
 
@@ -322,21 +319,106 @@ Then we input the heat equation and initial-boundary value conditions. Boundary 
 
 Our strategy focus on two variables, $v_h$ and $u_h$. Nine pairs of data are tested to find the best strategy.
 \begin{center}
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{c|c}
 \hline
-      &$v_h$  &$u_h$        \\ \hline
- 1    &0.1             & 50              \\ \hline
- 2    &0.2             & 50              \\ \hline
- 3    &0.3             & 50              \\ \hline
- 4    &0.1             & 40              \\ \hline
- 5    &0.2             & 40              \\ \hline
- 6    &0.3             & 40              \\ \hline
- 7    &0.1             & 30              \\ \hline
- 8    &0.2             & 30              \\ \hline
- 9    &0.3             & 30              \\ \hline
+    $v_h kg/s$  &${u_h}\,^{\circ}\mathrm{C}$        \\ \hline
+     0.1             & 50              \\ \hline
+    0.2             & 50              \\ \hline
+     0.3             & 50              \\ \hline
+     0.1             & 40              \\ \hline
+     0.2             & 40              \\ \hline
+     0.3             & 40              \\ \hline
+     0.1             & 30              \\ \hline
+     0.2             & 30              \\ \hline
+     0.3             & 30              \\ \hline
 \end{tabular}
 \end{center}
-In each operation, $u_2$ is taken as $33.5^{\circ}\mathrm$ and the initial value condition is $u=35^{\circ}\mathrm$. Then the result performs like this []
+In each operation, $u_2$ is taken as $33.5\,^{\circ}\mathrm{C}$
+and the initial value condition is $35\,^{\circ}\mathrm{C}$.
+ We take 120s as time period. Then the result performs like the following graphs show.
+
+Figure 5, Figure 6, Figure 7 shows the temperature of water at t=240, with $u_h=40$ and $v_h=0.1, 0.2 and 0.3$
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=8cm]{6-2.pdf}\\
+  \caption{$u_h=40$,$v_h=0.1$,t=240}\label{6-2_p}
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=8cm]{10-2.pdf}\\
+  \caption{$u_h=40$,$v_h=0.2$,t=240}\label{10-2_p}
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=8cm]{11-2.pdf}\\
+  \caption{$u_h=40$,$v_h=0.3$,t=240}\label{11-2_p}
+\end{figure}
+
+Figure 8, Figure 9, Figure 10 show the temperature at t=600
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=8cm]{6-5.pdf}\\
+  \caption{$u_h=40$,$v_h=0.1$,t=600}\label{6-5_p}
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=8cm]{10-5.pdf}\\
+  \caption{$u_h=40$,$v_h=0.2$,t=240}\label{10-5_p}
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=8cm]{11-5.pdf}\\
+  \caption{$u_h=40$,$v_h=0.3$,t=600}\label{11-5_p}
+\end{figure}
+
+It indicates that keep $u_h$, temperature increases when $v_h$ increases, and the system becomes more stable as time goes on. It proves that our model is sensible.
+
+  
+Figure 11, Figure 12, Figure 13 show the temperature of water at t=240, with $v_h=0.2$ and $u_h=30, 40 and 50$
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=8cm]{8-2.pdf}\\
+  \caption{$u_h=30$,$v_h=0.2$,t=240}\label{8-2_p}
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=8cm]{10-2.pdf}\\
+  \caption{$u_h=40$,$v_h=0.2$,t=240}\label{10-2_p}
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=8cm]{4-2.pdf}\\
+  \caption{$u_h=50$,$v_h=0.2$,t=240}\label{4-2_p}
+\end{figure}
+
+Figure 14, Figure 15, Figure 16 show the temperature at t=600
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=8cm]{8-5.pdf}\\
+  \caption{$u_h=30$,$v_h=0.2$,t=600}\label{8-5_p}
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=8cm]{10-5.pdf}\\
+  \caption{$u_h=40$,$v_h=0.2$,t=600}\label{10-5_p}
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=8cm]{4-5.pdf}\\
+  \caption{$u_h=50$,$v_h=0.2$,t=600}\label{4-5_p}
+\end{figure}
+
+It indicates that keep $v_h$, temperature increases when $u_h$ increases, and the system becomes more stable as time goes on. It proves that our model is sensible.
 
 Comparing the temperature distribution of each strategy, with least water waste, we choose $v_h=0.2$, $u_h=40$ as the best strategy to keep the temperature.
 
@@ -347,31 +429,47 @@ Comparing the temperature distribution of each strategy, with least water waste,
 \subsection{Parameters of Bathtub}
 \label{sec:parameters of bathtub}
 \begin{itemize}
-\item We change the shape of the bathtub to sphere and cylinder with the same strategy. The temperature graph shows that sphere is the properest shape for keeping water temperature. The cylinder is proved to be the worst on keeping temperature. However, temperature of cylinder bathtub is evener than others.
-\item We change the volume of the bathtub without changing the proportion. The result as following Table [] shows that with the same $v_h$, $u_h$ increases as volume increases; with the same $u_h$, $v_h$ increases as volume increases.
+\item We change the shape of the bathtub to sphere and cylinder to get the best strategy. The result shows that the bathtub with the shape of sphere is the most effective in keeping temperature.
+\begin{center}
+\begin{tabular}{c|c|c}
+\hline
+ Shape     &$v_h$  &$u_h$        \\ \hline
+ Square    &0.2             & 40              \\ \hline
+ Sphere    &0.15            & 40              \\ \hline
+ Cylinder  &0.2             & 45              \\ \hline
+\end{tabular}
+\end{center}
+     \item We change the volume of the bathtub without changing the proportion. The result in the following table shows that with the same $v_h$, $u_h$ increases as volume increases; with the same $u_h$, $v_h$ increases as volume increases.
 \end{itemize}
 
 \subsection{Parameters of Person}
 \label{sec:parameters of person}
 \begin{itemize}
-\item Comparing the temperature graph with different shape of the person, we found when the shape gets more regular, $u_h$, $v_h$ becomes decreases relatively.
-\item The larger the person, the more heat between water and the person. That means more heat is called for. $u_h$, $v_h$ for best strategy increases.
-\item When the surface temperature of the person increases, it becomes more closed to water temperature. Then water and person have less heat exchange. Less heat of hot water from faucet is called for. $u_h$, $v_h$ for best strategy decreases.
+\item Comparing the temperature graph with different shape of the person, we found when the shape gets more regular, $u_h$, $v_h$ decreases relatively.
+\item Change the volume of the person. The result shows that, $u_h$, $v_h$ for best strategy increases when the volume increases.
+\item Change the surface temperature of the person to get the best strategy. The result shows no noticeable change.
+    \begin{center}
+\begin{tabular}{c|c|c}
+\hline
+ Surface Temperature     &$v_h$  &$u_h$        \\ \hline
+ $u_2=33.5$    &0.2             & 40              \\ \hline
+ $u_2=33.5$    &0.15            & 40              \\ \hline
+ $u_2=33.5$  &0.2             & 45              \\ \hline
+\end{tabular}
+\end{center}
 \end{itemize}
 
 \subsection{Effects of Motion}
 \label{sec:effects of motion}
 When the person in the bathtub makes motions, the heat exchange coefficient between the person and water ${\gamma}_2$ increases. That means heat exchange between water and the person increases. In another aspect, the air above flows, so that evaporation heat of water increases. Water loses more heat.
 
-<<<<<<< HEAD
 The effect is that more heat is called for to keep the temperature. So $u_h$ increases for best strategy to keep the temperature.
-=======
-The effect is that more heat is needed to keep the temperature, consequently $u_h$ as the best strategy increases to keep the temperature. 
->>>>>>> origin
+
+The effect is that more heat is needed to keep the temperature, consequently $u_h$ as the best strategy increases to keep the temperature.
 
 \subsection{Effects of Bubble Bath Additive}
 \label{sec:effects of bubble bath additive}
-When bubble bath additive is added while initially filling the bathtub, bubbles stay on the surface and the evaporation of water to air is limitted. So water loses less heat.
+When bubble bath additive is added while initially filling the bathtub, bubbles stay on the surface and the evaporation of water to air is limited. So water loses less heat.
 
 The effect is that less heat is needed to keep the temperature. So $u_h$ for best strategy decreases to keep the temperature.
 
@@ -383,9 +481,8 @@ The effect is that less heat is needed to keep the temperature. So $u_h$ for bes
 
 \begin{itemize}
 \item Our model make good use of thermology knowledge so it can reflect the situation in the real world realistically.
-\item Our model build a 3D geometry to simulate the research object so
-\item The network we built includes both microcosmic part and
-  macrocosmic part, and they react to each other.
+\item Our model build a 3D geometry to simulate the research object so it can show the exact situation.
+\item Our model operates with different strategies and display the result by 3D geometry graph, so they could be compared in a visible way.
 \item Our model proves the effect of time.
 \end{itemize}
 
@@ -435,7 +532,7 @@ If you'd like to use the bathtub, it's better to acknowledge that:
 \end{itemize}
 From statement above, you may understand our bathtub can't stay in a even temperature evenly. Consequently we have some suggestions for you, if you'd like to enjoy more in your bath :
 \begin{itemize}
-\item To keep the water warm and relax yourself, you may turn the faucet on. Water-in in high temperature loses it's energy quickly, and water-in in low temperature is unable to warm your surrounding. It's best that you set the speed of the water-in at xxx, and temperature at yyy.
+\item To keep the water warm and relax yourself, you may turn the faucet on. Water-in in high temperature loses it's energy quickly, and water-in in low temperature is unable to warm your surrounding. It's best that you set the speed of the water-in at 0.2kg/s, and temperature at $40\,^{\circ}\mathrm{C}$.
 \item Further more, your movement effects the water. It would be great if you stay still, but it doesn't count too much. For a better temperature-keeping situation, you may add some bubble bath additive to decrease the temperature loss.
 \end{itemize}
 

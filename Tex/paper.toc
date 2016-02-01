@@ -1,16 +1,17 @@
 \contentsline {section}{\numberline {1}Introduction}{2}
 \contentsline {subsection}{\numberline {1.1}Restatement of the Problem}{2}
-\contentsline {section}{\numberline {2}Assumptions and Justifications}{3}
-\contentsline {section}{\numberline {3}Water in the Bathtub Model}{3}
-\contentsline {subsection}{\numberline {3.1}Model Overview}{4}
-\contentsline {subsection}{\numberline {3.2}Heat Equation}{4}
-\contentsline {subsection}{\numberline {3.3}Initial-Boundary Value Condition}{6}
-\contentsline {subsection}{\numberline {3.4}PDE Solution}{6}
-\contentsline {section}{\numberline {4}Results and Analysis}{7}
-\contentsline {section}{\numberline {5}Sensitivity Analysis}{7}
-\contentsline {subsection}{\numberline {5.1}Parameters of Bathtub}{7}
-\contentsline {subsection}{\numberline {5.2}Parameters of Person}{7}
-\contentsline {subsection}{\numberline {5.3}Effects of Motion}{7}
-\contentsline {subsection}{\numberline {5.4}Effects of Bubble Bath Additive}{8}
-\contentsline {section}{\numberline {6}Strengths and Weaknesses}{8}
-\contentsline {section}{\numberline {7}Non-technical explanation}{9}
+\contentsline {section}{\numberline {2}Terminology}{2}
+\contentsline {section}{\numberline {3}Assumptions and Justifications}{3}
+\contentsline {section}{\numberline {4}Water in the Bathtub Model}{3}
+\contentsline {subsection}{\numberline {4.1}Model Overview}{3}
+\contentsline {subsection}{\numberline {4.2}Heat Equation}{4}
+\contentsline {subsection}{\numberline {4.3}Initial-Boundary Value Condition}{6}
+\contentsline {subsection}{\numberline {4.4}PDE Solution}{7}
+\contentsline {section}{\numberline {5}Results and Analysis}{8}
+\contentsline {section}{\numberline {6}Sensitivity Analysis}{9}
+\contentsline {subsection}{\numberline {6.1}Parameters of Bathtub}{9}
+\contentsline {subsection}{\numberline {6.2}Parameters of Person}{9}
+\contentsline {subsection}{\numberline {6.3}Effects of Motion}{10}
+\contentsline {subsection}{\numberline {6.4}Effects of Bubble Bath Additive}{10}
+\contentsline {section}{\numberline {7}Strengths and Weaknesses}{10}
+\contentsline {section}{\numberline {8}Non-technical explanation}{12}

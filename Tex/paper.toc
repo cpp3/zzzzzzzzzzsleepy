@@ -13,4 +13,4 @@
 \contentsline {subsection}{\numberline {5.3}Effects of Motion}{7}
 \contentsline {subsection}{\numberline {5.4}Effects of Bubble Bath Additive}{8}
 \contentsline {section}{\numberline {6}Strengths and Weaknesses}{8}
-\contentsline {section}{\numberline {7}Non-technical explanation}{8}
+\contentsline {section}{\numberline {7}Non-technical explanation}{9}

@@ -47,17 +47,17 @@
 \label{sec:restatement-of-the-problem}
 We are required to build a mathematical model to solve the problem of heating water in bathtub. Thus we have some subproblems:
 \begin{itemize}
-\item Build a basic model that demonstrate the change of the temperature in the bathtub in space and time without other intervention.
+\item Build a basic model that demonstrates the change of the temperature in the bathtub in space and time without other interventions.
 \item Figure out the influence of parameters such as the shape of the bathtub or the motions made by the person or so.
 \item Propose a strategy to keep the temperature as even as possible.
 \end{itemize}
-In the first step, we build the simplest model. The shape of the bathtub is a cuboid, and the person will stay still. In the second step, the person move slowly and the shape of the bathtub changes. In the third step, we develop the conclusion of the strategy.
+In the first step, we build the simplest model. The shape of the bathtub is a cuboid, and the person will stay still. In the second step, the person moves slowly and the shape of the bathtub changes. In the third step, we develop the conclusion of the strategy.
 
 \section{Terminology}
 \label{sec:terminology}
 
 Definitions of symbols employed in this paper are listed in
-\textbf{Table 1}.
+\textbf{Table \ref{1_t}}.
 \begin{table}
 \begin{tabular}{l|l}
   Constant & Description \\
@@ -80,9 +80,10 @@ Definitions of symbols employed in this paper are listed in
   $V_a$          &Volume of surrounding air \\
   $C_v$          &Evaporation heat of water \\
 \end{tabular}
+\caption{Constant}\label{1_t}
 \end{table}
 
-\textbf{Table 2}.
+\textbf{Table \ref{2_t}}.
 \begin{table}
 \begin{tabular}{l|l}
   Variable & Description \\
@@ -97,6 +98,7 @@ Definitions of symbols employed in this paper are listed in
   $v_h$          &Velocity of hot water from faucet \\
   $g$            &Evaporation heat of water\\
 \end{tabular}
+\caption{Variable}\label{2_t}
 \end{table}
 
 \section{Assumptions and Justifications}
@@ -150,7 +152,7 @@ In our model, five factors account for heat transfer of water: heat exchange bet
 exchange between water and the person, heat exchange between water and the bathtub, heat energy of hot water from the
 faucet and heat energy of water flow outside. According to thermology, we deduce the equation
 of water temperature in the bathtub. The initial-boundary value conditions are deduced according to
-Fourier theorem, vaporization equation[ ].
+Fourier theorem, vaporization equation\cite{1}.
 
 Since the equation is a relatively complex 3D partial differential equation, we use matlab to solve it.
 We build a geometry as the bathtub. By finite element method, the geometry is divided into several parts.
@@ -172,14 +174,14 @@ Figure 1 shows thermal analysis of water in bathtub.
 
 First, we assume that the heat change of all the water in a tiny time $\Delta t$ from $t_1$ to $t_2$ is $\Delta Q$.
 As shown in Figure 1, heat of water in the bathtub exchanges with air, the person and the bathtub.
-In addition, heat changes when the hot water flow in and the excess water flow out.
+In addition, heat changes when the hot water flows in and the excess water flows out.
 Thus $\Delta Q$ is divided into five parts, i.e.
 \begin{equation}
  \Delta Q=\Delta Q_1+\Delta Q_2-\Delta Q_3-\Delta Q_4
 \end{equation}
 in which $\Delta Q_1$ is the heat transferred from air, person and bathtub,
 $\Delta Q_2$ is the heat of the hot water from the faucet in $\Delta t$,
-$\Delta Q_3$ is the heat of the water flow away in $\Delta t$,
+$\Delta Q_3$ is the heat of the water flows away in $\Delta t$,
 $\Delta Q_4$ is the heat loss because of vaporization.
 
 Totally, internal energy of water changes when heat exchanges happen.
@@ -189,12 +191,12 @@ Then the temperature changes according to the equation
 \end{equation}
 in which $\Omega$ is the region of water, $\rho$ represents the density of water, $u_f$ stands for the final temperature when t=$t_2$, and $u_i$ is the initial temperature when t=$t_1$.
 
-Considering the right side of equation 1.
-Fourier theorem indicates that,
+Considering the right side of equation 1,
+ Fourier theorem indicates that,
 \begin{equation}
  dQ=-k\frac{\partial u}{\partial n}dSdt
 \end{equation}
-holds for the heat flow through surface with square of dS, as it shows in Figure 2.
+holds for the heat flows through surface with square of dS, as it shows in Figure 2.
 \begin{figure}[htb]
   \centering
   \includegraphics[width=8cm]{1.pdf}\\
@@ -205,7 +207,7 @@ In the equation, k is thermal conductivity, $\frac{\partial u}{\partial n}$ is t
  \Delta Q_1=\int_{t_1}^{t_2}[{\int_{\Gamma}}k\frac{\partial u}{\partial n}dS]dt
 \end{equation}
 in which $\Gamma$ is the boundary of $\Omega$,
-the heat flow into the water by thermal conduction could be calculated.
+the heat flows into the water by thermal conduction could be calculated.
 
 $\Delta Q_2$ is determined by the internal energy of hot water from the faucet in $\Delta t$.
 And $\Delta Q_2$ can be calculated by

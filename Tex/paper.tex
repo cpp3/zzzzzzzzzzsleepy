@@ -47,17 +47,16 @@
 \label{sec:restatement-of-the-problem}
 We are required to build a mathematical model to solve the problem of heating water in bathtub. Thus we have some subproblems:
 \begin{itemize}
-\item Build a basic model that demonstrate the change of the temperature in the bathtub in space and time without other intervention.
+\item Build a basic model that demonstrates the change of the temperature in the bathtub in space and time without other interventions.
 \item Figure out the influence of parameters such as the shape of the bathtub or the motions made by the person or so.
 \item Propose a strategy to keep the temperature as even as possible.
 \end{itemize}
-In the first step, we build the simplest model. The shape of the bathtub is a cuboid, and the person will stay still. In the second step, the person move slowly and the shape of the bathtub changes. In the third step, we develop the conclusion of the strategy.
+In the first step, we build the simplest model. The shape of the bathtub is a cuboid, and the person will stay still. In the second step, the person moves slowly and the shape of the bathtub changes. In the third step, we develop the conclusion of the strategy.
 
 \section{Terminology}
 \label{sec:terminology}
 
-Definitions of symbols employed in this paper are listed in
-\textbf{Table 1}.
+Definitions of symbols employed in this paper are listed in Table \ref{1_t} and Table \ref{2_t}.
 \begin{table}
 \begin{tabular}{l|l}
   Constant & Description \\
@@ -80,9 +79,10 @@ Definitions of symbols employed in this paper are listed in
   $V_a$          &Volume of surrounding air \\
   $C_v$          &Evaporation heat of water \\
 \end{tabular}
+\caption{Constant}\label{1_t}
 \end{table}
 
-\textbf{Table 2}.
+
 \begin{table}
 \begin{tabular}{l|l}
   Variable & Description \\
@@ -97,6 +97,7 @@ Definitions of symbols employed in this paper are listed in
   $v_h$          &Velocity of hot water from faucet \\
   $g$            &Evaporation heat of water\\
 \end{tabular}
+\caption{Variable}\label{2_t}
 \end{table}
 
 \section{Assumptions and Justifications}
@@ -146,7 +147,7 @@ In our model, five factors account for heat transfer of water: heat exchange bet
 exchange between water and the person, heat exchange between water and the bathtub, heat energy of hot water from the
 faucet and heat energy of water flow outside. According to thermology, we deduce the equation
 of water temperature in the bathtub. The initial-boundary value conditions are deduced according to
-Fourier theorem, vaporization equation[ ].
+Fourier theorem, vaporization equation\cite{1}.
 
 Since the equation is a relatively complex 3D partial differential equation, we use matlab to solve it.
 We build a geometry as the bathtub. By finite element method, the geometry is divided into several parts.
@@ -159,7 +160,7 @@ The solution of each part is considered to be a relatively precise value solutio
 
 In this part, we use physical theorem to deduce the heat conduction equation in the bathtub.
 
-Figure 1 shows thermal analysis of water in bathtub.
+Figure \ref{1_p} shows thermal analysis of water in bathtub.
 \begin{figure}[htb]
   \centering
   \includegraphics[width=8cm]{2.pdf}\\
@@ -168,14 +169,14 @@ Figure 1 shows thermal analysis of water in bathtub.
 
 First, we assume that the heat change of all the water in a tiny time $\Delta t$ from $t_1$ to $t_2$ is $\Delta Q$.
 As shown in Figure 1, heat of water in the bathtub exchanges with air, the person and the bathtub.
-In addition, heat changes when the hot water flow in and the excess water flow out.
+In addition, heat changes when the hot water flows in and the excess water flows out.
 Thus $\Delta Q$ is divided into five parts, i.e.
 \begin{equation}
  \Delta Q=\Delta Q_1+\Delta Q_2-\Delta Q_3-\Delta Q_4
 \end{equation}
 in which $\Delta Q_1$ is the heat transferred from air, person and bathtub,
 $\Delta Q_2$ is the heat of the hot water from the faucet in $\Delta t$,
-$\Delta Q_3$ is the heat of the water flow away in $\Delta t$,
+$\Delta Q_3$ is the heat of the water flows away in $\Delta t$,
 $\Delta Q_4$ is the heat loss because of vaporization.
 
 Totally, internal energy of water changes when heat exchanges happen.
@@ -185,12 +186,12 @@ Then the temperature changes according to the equation
 \end{equation}
 in which $\Omega$ is the region of water, $\rho$ represents the density of water, $u_f$ stands for the final temperature when t=$t_2$, and $u_i$ is the initial temperature when t=$t_1$.
 
-Considering the right side of equation 1.
-Fourier theorem indicates that,
+Considering the right side of equation 1,
+ Fourier theorem indicates that,
 \begin{equation}
  dQ=-k\frac{\partial u}{\partial n}dSdt
 \end{equation}
-holds for the heat flow through surface with square of dS, as it shows in Figure 2.
+holds for the heat flows through surface with square of dS, as it shows in Figure \ref{2_p}.
 \begin{figure}[htb]
   \centering
   \includegraphics[width=8cm]{1.pdf}\\
@@ -201,7 +202,7 @@ In the equation, k is thermal conductivity, $\frac{\partial u}{\partial n}$ is t
  \Delta Q_1=\int_{t_1}^{t_2}[{\int_{\Gamma}}k\frac{\partial u}{\partial n}dS]dt
 \end{equation}
 in which $\Gamma$ is the boundary of $\Omega$,
-the heat flow into the water by thermal conduction could be calculated.
+the heat flows into the water by thermal conduction could be calculated.
 
 $\Delta Q_2$ is determined by the internal energy of hot water from the faucet in $\Delta t$.
 And $\Delta Q_2$ can be calculated by
@@ -235,7 +236,7 @@ Combining the equations above, we conclude that
 In this heat equation, $u_h$ and $v_h$ are two variables that control the strategy.
 
 Now let's discuss g, evaporation rate per square.
-As Figure 3 shows, water evaporates into air and air humidity increases, until it is saturate. According to empirical formula in [], we know that
+As Figure \ref{3_p} shows, water evaporates into air and air humidity increases, until it is saturate. According to empirical formula\cite{1}, we know that
 \begin{equation}
  g=\frac{(25+19v)({x_s}-x)}{3600}
 \end{equation}
@@ -264,13 +265,12 @@ Solving the equation, we get the solution
 \subsection{Initial-Boundary Value Condition}
 \label{initial-boundary value condition}
 
-Boundary value conditions are quite essential in partial differential equations. In our model, water is not a regular research object.
-Thus boundary value condition is complex.
+Boundary value conditions are quite essential in partial differential equations. In our model, water is not a regular object. Thus boundary value condition is complex.
 
 The boundary of water consists of four parts: water-air boundary, water-person boundary, water-bathtub boundary, and the square for faucet. We denote them as
 ${\Gamma}_1$, ${\Gamma}_2$, ${\Gamma}_3$, ${\Gamma}_4$ respectively.
 
-Since person is temperature-constant, the boundary value condition of ${\Gamma}_1$ and ${\Gamma}_3$ could be considered
+Since bather is temperature-constant, the boundary value condition of ${\Gamma}_1$ and ${\Gamma}_3$ could be considered
 as the Dirichlet value condition. That is
 \begin{equation}
  u=u_i, (x,y,z)\in {\Gamma}_i, i=2.4
@@ -281,12 +281,12 @@ The boundary value condition of ${\Gamma}_1$ and ${\Gamma}_3$ could be considere
 \begin{equation}
  k\frac{\partial u}{\partial n}+{{\gamma}_i}u={{\gamma}_i}{u_i}, (x,y,z)\in {\Gamma}_i
 \end{equation}
-In the equation, i=1 or 3 and $u_i$ is the temperature of contact material,
+In the equation, i=1 or 3 ,$u_i$ is the temperature of contact material, and 
 ${\gamma}_i$ is the heat exchange coefficient of ${\Gamma}_i$.
 
 In the equation above, $u_3$ is temperature of bathtub, we assume it is unchangeable and as same as initial air temperature.
 
-While $u_1$ i, the temperature of air, is time-dependant, because water vapor transfer heat to air. We can calculate $u_1$ by calculating the energy of water vapor evaporated in the air. Referencing the deduction of evaporation in the last section,
+$u_1$, the temperature of air, is time-dependant, because water vapor transfer heat to air. We can calculate $u_1$ by calculating the energy of water vapor evaporating in the air. Referencing the deduction of evaporation in the last section,
 \begin{equation}
   u_1=u_0+\frac{C_w\rho}{C_a{{\rho}_a}} (x_s-x_0)(1-e^{-\lambda t})
 \end{equation}
@@ -297,11 +297,11 @@ In our model, we assume the temperature of water is equilibrium throughout the b
 
 \subsection{PDE Solution}
 \label{sec:PDE solution}
-Since our equations are complex and the region is quite irregular, it's impossible to get a regular solution. Finite element method is normally adopted to deal with this kind of problem.
+Since our equations are complex and the region is quite irregular, it's impossible to get a analytical solution. Finite element method is normally adopted to deal with this kind of problem.
 
-We use Partial Differential Equation Toolbox in matlab to solve our equations. Partial Differential Equation Toolbox makes use of finite element method to separate irregular geometry and calculate a relatively precise solution, get solution of temperature corresponding to different $u_h$ and $v_h$. By comparing temperature distribution, we choose proper parameters as the best strategy.
+We use Partial Differential Equation Toolbox in matlab to solve our equations. Partial Differential Equation Toolbox makes use of finite element method to separate irregular geometry, calculate a relatively precise solution, and get solution of temperature corresponding to different $u_h$ and $v_h$. By comparing temperature distributions, we choose proper parameters as the best strategy.
 
-First, we build a 3D geometry model to simulate a proper-size bathtub, as it shown in Figure 4. Matlab divided the geometry into several elements.
+First, we build a 3D geometry model to simulate a proper-size bathtub, as it shown in Figure \ref{4_p}. Matlab divides the geometry into several elements.
 \begin{figure}[htb]
   \centering
   \includegraphics[width=8cm]{4.png}\\
@@ -313,7 +313,9 @@ Then we input the heat equation and initial-boundary value conditions. Boundary 
 \section{Results and Analysis}
 \label{sec:performance-and-analysis}
 
-Our strategy focus on two variables, $v_h$ and $u_h$. Nine pairs of data are tested to find the best strategy.
+Our strategy focus on two variables, $v_h$ and $u_h$. We test about fifty pairs of data to find the best strategy. And we list nine representative pairs of data in Table \ref{3_t}.
+
+\begin{table}
 \begin{center}
 \begin{tabular}{c|c}
 \hline
@@ -329,27 +331,30 @@ Our strategy focus on two variables, $v_h$ and $u_h$. Nine pairs of data are tes
      0.3             & 30              \\ \hline
 \end{tabular}
 \end{center}
+\caption{Represenative Data Pairs}\label{3_t}
+\end{table}
+
 In each operation, $u_2$ is taken as $33.5\,^{\circ}\mathrm{C}$
 and the initial value condition is $35\,^{\circ}\mathrm{C}$.
- We take 120s as time period. Then the result performs like the following graphs show.
+ We take 120s as time period. The following graphs show the results we get.
 
-Figure 5, Figure 6, Figure 7 shows the temperature of water at t=240, with $u_h=40$ and $v_h=0.1, 0.2 and 0.3$
+Figure \ref{5_p}, Figure \ref{6_p}, Figure \ref{7_p} show the temperature of water at t=240, with $u_h=40$ and $v_h=0.1, 0.2 and 0.3$
 \begin{figure}[htb]
   \centering
   \includegraphics[width=8cm]{6-2.pdf}\\
-  \caption{$u_h=40$,$v_h=0.1$,t=240}\label{6-2_p}
+  \caption{$u_h=40$, $v_h=0.1$, t=240}\label{5_p}
 \end{figure}
 
 \begin{figure}[htb]
   \centering
   \includegraphics[width=8cm]{10-2.pdf}\\
-  \caption{$u_h=40$,$v_h=0.2$,t=240}\label{10-2_p}
+  \caption{$u_h=40$, $v_h=0.2$, t=240}\label{6_p}
 \end{figure}
 
 \begin{figure}[htb]
   \centering
   \includegraphics[width=8cm]{11-2.pdf}\\
-  \caption{$u_h=40$,$v_h=0.3$,t=240}\label{11-2_p}
+  \caption{$u_h=40$,$v_h=0.3$,t=240}\label{7_p}
 \end{figure}
 
 Figure 8, Figure 9, Figure 10 show the temperature at t=600

@@ -51,6 +51,22 @@ are closely connected to them. In order to simulate this process and
 improve it, we build a human capital model based on Social Network
 Analysis and Markov process.
 
+\begin{displaymath}
+Q=\iiint\limits_{\Omega}\rho C_{w}(u_f - u_i)dx dy dz
+\end{displaymath}
+
+\begin{displaymath}
+\begin{aligned}
+\int_{t_1}^{t_2} \iint\limits_{\Gamma}k\frac{\partial u}{\partial n}dsdt & =\iiint\limits_{\Omega}\rho C_{w}(u_f - u_i)dx dy dz\\
+& =\int_{t_1}^{t_2}\iiint\limits_{\Omega}[\frac{\partial}{\partial x}(k\frac{\partial u}{\partial x})+\frac{\partial}{\partial y}(k\frac{\partial u}{\partial y})+\frac{\partial}{\partial z}(k\frac{\partial u}{\partial z})]dxdydx\\
+& = \iiint\limits_{\Omega}\rho C_{w}(\int_{t_1}^{t_2}\frac{\partial u}{\partial t}dt)dxdydz
+\end{aligned}
+\end{displaymath}
+
+\begin{displaymath}
+\rho C_{w}\frac{\partial u}{\partial t}=k\bigtriangleup u+\frac{C_w V_h(u_h-u)}{}
+\end{displaymath}
+
 \subsection{Restatement of the Problem}
 \label{sec:restatement-of-the-problem}
 We are required to build a mathematical model to solve the problem of heating water in bathtub. Thus we have some subproblems:
@@ -473,7 +489,7 @@ a
 
 \begin{itemize}
 \item We assume that the water is still. In fact, streams flow and fluid dynamic is better taken into consideration. The actual situation is much complicated.
-\item The model of the person should be more realistic. In fact, model of human body includes hands, legs or other parts, and the surface of human skin isn't even. 
+\item The model of the person should be more realistic. In fact, model of human body includes hands, legs or other parts, and the surface of human skin isn't even.
 \item The condensation of water should be taken into consideration. Water that evaporate become water vapour, and some will condense into water on the bathtub.
 \end{itemize}
 

@@ -304,15 +304,20 @@ Then we input the heat equation and initial-boundary value conditions. Boundary 
 \section{Results and Analysis}
 \label{sec:performance-and-analysis}
 
-Our strategy focus on two variables, $v_h$ and $u_h$. Several pairs of data are tested to find the best strategy.
+Our strategy focus on two variables, $v_h$ and $u_h$. Nine pairs of data are tested to find the best strategy.
 \begin{center}
 \begin{tabular}{|c|c|c|}
 \hline
       &$v_h$  &$u_h$        \\ \hline
- 1    &             & 5              \\ \hline
- 2    &             & 1              \\ \hline
- 3    &             & 3              \\ \hline
- 4    &             & 4              \\ \hline
+ 1    &0.1             & 50              \\ \hline
+ 2    &0.2             & 50              \\ \hline
+ 3    &0.3             & 50              \\ \hline
+ 4    &0.1             & 40              \\ \hline
+ 5    &0.2             & 40              \\ \hline
+ 6    &0.3             & 40              \\ \hline
+ 7    &0.1             & 30              \\ \hline
+ 8    &0.2             & 30              \\ \hline
+ 9    &0.3             & 30              \\ \hline
 \end{tabular}
 \end{center}
 
@@ -337,12 +342,15 @@ Our strategy focus on two variables, $v_h$ and $u_h$. Several pairs of data are 
 
 \subsection{Effects of Motion}
 \label{sec:effects of motion}
-When the person in the bathtub make motions, the heat exchange coefficient between person and water ${\gamma}_2$ increases. That means heat exchange between water and person increases. 
- 
-In another aspect, the air above flow, so that evaporation heat of water increases.
+When the person in the bathtub make motions, the heat exchange coefficient between person and water ${\gamma}_2$ increases. That means heat exchange between water and person increases. In another aspect, the air above flow, so that evaporation heat of water increases. Water losses more heat.
+
+The effect is that more heat is called for to keep the temperature. So $u_h$ increases for best strategy to keep the temperature. 
 
 \subsection{Effects of Bubble Bath Additive}
 \label{sec:effects of bubble bath additive}
+When bubble bath additive is added while initially filling the bathtub, bubble stay on the surface and restraint the evaporation of water to air. So water losses less heat.
+
+The effect is that less heat is called for to keep the temperature. So $u_h$ decreases for best strategy to keep the temperature.
 
 \section{Strengths and Weaknesses}
 \label{sec:strengths-and-weaknesses}
@@ -352,7 +360,7 @@ In another aspect, the air above flow, so that evaporation heat of water increas
 
 \begin{itemize}
 \item Our model make good use of thermology knowledge so it can reflect the situation in the real world realistically.
-\item Our model build a 3D geometry to simulate the research object so 
+\item Our model build a 3D geometry to simulate the research object so
 \item The network we built include both microcosmic part and
   macrocosmic part, and they react to each other.
 \item Our model proves the effect of time.

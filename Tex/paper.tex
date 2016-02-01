@@ -159,14 +159,14 @@ Definitions of symbols employed in this paper are listed in
 Partial differential equations are widely used in natural science, engineering and economical management.
 It is natural to use partial differential equation to solve this physical problem.
 
-In our model, five parts accounts for heat transfer of water: heat exchange between water and air, heat
-exchange between water and the person, heat exchange between water and the bathtub, heat of hot water from the
-faucet and heat of water flow outside. According to thermology, we conduct the equation
-of water temperature in the bathtub. The initial-boundary value condition could be conducted according to
+In our model, five factors account for heat transfer of water: heat exchange between water and air, heat
+exchange between water and the person, heat exchange between water and the bathtub, heat energy of hot water from the
+faucet and heat energy of water flow outside. According to thermology, we deduce the equation
+of water temperature in the bathtub. The initial-boundary value conditions are deduced according to
 Fourier theorem, vaporization equation[ ].
 
 Since the equation is a relatively complex 3D partial differential equation, we use matlab to solve it.
-We build a geometry as the bathtub. By finite element method, the geometry discrete into several parts.
+We build a geometry as the bathtub. By finite element method, the geometry is divided into several parts.
 The solution of each part is considered to be a relatively precise value solution.
 
 
@@ -174,42 +174,42 @@ The solution of each part is considered to be a relatively precise value solutio
 \subsection{Heat Equation}
 \label{sec:heat equation}
 
-In this part, we use physical theorem to conduct the heat conduction equation
+In this part, we use physical theorem to deduce the heat conduction equation
 in the bathtub.
 
 Figure 1 shows thermal analysis of water in bathtub.
 
-First,we assume that the heat change of all water in a tiny time $\Delta t$ from $t_1$ to $t_2$ is $\Delta Q$.
-As shown in Figure 1, water in the bathtub have heat exchange with air, the person, and the bathtub.
+First, we assume that the heat change of all the water in a tiny time $\Delta t$ from $t_1$ to $t_2$ is $\Delta Q$.
+As it shown in Figure 1, heat of water in the bathtub exchanges with air, the person and the bathtub.
 In addition, heat changes when the hot water flow in and the excess water flow out.
 Thus $\Delta Q$ is divided into five parts, i.e.
 \begin{equation}
  \Delta Q=\Delta Q_1+\Delta Q_2-\Delta Q_3-\Delta Q_4
 \end{equation}
-in which $\Delta Q_1$ is heat transferred from air, person and bathtub,
+in which $\Delta Q_1$ is the heat transferred from air, person and bathtub,
 $\Delta Q_2$ is the heat of the hot water from the faucet in $\Delta t$,
 $\Delta Q_3$ is the heat of the water flow away in $\Delta t$,
-$\Delta Q_4$ is the heat loss of vaporization.
+$\Delta Q_4$ is the heat loss because of vaporization.
 
-Totally, internal energy of water changes while heat changes.
-Then the temperature changes with
+Totally, internal energy of water changes when heat exchanges happen.
+Then the temperature changes according to the equation
 \begin{equation}
  Q=\iiint\limits_{\Omega}\rho C_{w}(u_f - u_i)dx dy dz
 \end{equation}
-, in which $\Omega$ is the region of water, $\rho$ is the density of water, $u_f$ is the final temperature when t=$t_2$, $u_i$ is the initial temperature when t=$t_1$.
+, in which $\Omega$ is the region of water, $\rho$ represents the density of water, $u_f$ stands for the final temperature when t=$t_2$, and $u_i$ is the initial temperature when t=$t_1$.
 
 Considering the right side of equation 1.
 Fourier theorem indicates that,
 \begin{equation}
- dQ=-k\frac{\vartheta u}{\vartheta n}dSdt
+ dQ=-k\frac{\partial u}{\partial n}dSdt
 \end{equation}
-holds for the heat flow through surface with square of dS, as shown in Figure 2.
-In the equation, k is thermal conductivity, $\frac{\vartheta u}{\vartheta n}$ is the derivative of u along the normal line. Thus, after integration of dQ by time and space
+holds for the heat flow through surface with square of dS, as it shown in Figure 2.
+In the equation, k is thermal conductivity, $\frac{\partial u}{\partial n}$ is the derivative of u along the normal line. Thus, after integration of dQ by time and space
 \begin{equation}
- \Delta Q_1=int_{t_1}^{t_2}[{int_{\Gamma}}k\frac{\vartheta u}{\vartheta n}dS]dt
+ \Delta Q_1=\int_{t_1}^{t_2}[{\int_{\Gamma}}k\frac{\partial u}{\partial n}dS]dt
 \end{equation}
-in which $\Gamma$ is the boundary of $\Omega$.
-The heat flow into the water by thermal conduction could be calculated by the equation.
+in which $\Gamma$ is the boundary of $\Omega$,
+the heat flow into the water by thermal conduction could be calculated.
 
 $\Delta Q_2$ is determined by the internal energy of hot water from the faucet in $\Delta t$.
 And $\Delta Q_2$ can be calculated by
@@ -217,42 +217,44 @@ $\Delta Q_2={\Delta m}C{u_h}$.
 Since the hot water is constant,
 $\Delta m=v{\Delta t}$.
 
-It is obvious that the excess water is as the same value of hot water in any time period.
+It is obvious that the excess water is the same value of hot water in any time period.
 Thus $\Delta Q_3$ can be calculated by
 $\Delta Q_3={\Delta m}{C_w}u$.
 Also, $\Delta m=v{\Delta t}$.
-$\Delta v$ is the weight of hot water each second, $\Delta m$ is the weight of hot water in $\Delta t$.
+$\Delta v$ is the weight of hot water per second, $\Delta m$ is the weight of hot water flows in during $\Delta t$.
 
 According to thermal theorem, heat loss in vaporization is proportional to the weight of vapor water.
 $\Delta Q_4={C_v}\Delta {m_v}$.
-$\Delta {m_v}$ is the weight of evaporation water in $\Delta t$, $\Delta {C_v}$ is evaporation heat of water.
+$\Delta {m_v}$ is the weight of evaporation water in $\Delta t$, ${C_v}$ is evaporation heat of water per kilogram.
 
-Since water could be considered as manifold, according to Green formula,
-\begin{equation}
-% \int_{t_1}^{t_2} \iint\limits_{\Gamma}k\frac{\partial u}{\partial n}dsdt & =\iiint\limits_{\Omega}\rho C_{w}(u_f - u_i)dx dy dz\\
-%& =\int_{t_1}^{t_2}\iiint\limits_{\Omega}[\frac{\partial}{\partial x}(k\frac{\partial u}{\partial x})+\frac{\partial}{\partial y}(k\frac{\partial u}{\partial y})+\frac{\partial}{\partial z}(k\frac{\partial u}{\partial z})]dxdydx\\
-%& = \iiint\limits_{\Omega}\rho C_{w}(\int_{t_1}^{t_2}\frac{\partial u}{\partial t}dt)dxdydz%
-\end{equation}.
+Since water could be considered as manifold, according to Green formula, we deduce the formula
+\begin{displaymath}
+\begin{aligned}
+\int_{t_1}^{t_2} \iint\limits_{\Gamma}k\frac{\partial u}{\partial n}dsdt & =\iiint\limits_{\Omega}\rho C_{w}(u_f - u_i)dx dy dz\\
+& =\int_{t_1}^{t_2}\iiint\limits_{\Omega}[\frac{\partial}{\partial x}(k\frac{\partial u}{\partial x})+\frac{\partial}{\partial y}(k\frac{\partial u}{\partial y})+\frac{\partial}{\partial z}(k\frac{\partial u}{\partial z})]dxdydx\\
+& = \iiint\limits_{\Omega}\rho C_{w}(\int_{t_1}^{t_2}\frac{\partial u}{\partial t}dt)dxdydz
+\end{aligned}
+\end{displaymath}
 
-Combining the equations above,
+Combining the equations above, we conclude that
 \begin{equation}
-% \rho C_{w}\frac{\partial u}{\partial t}=k\bigtriangleup u+\frac{C_w V_h(u_h-u)}{V}-\frac{C_v g}{V}%
-\end{equation}.
+\rho C_{w}\frac{\partial u}{\partial t}=k\bigtriangleup u+\frac{C_w V_h(u_h-u)}{V}-\frac{C_v g}{V}%
+\end{equation}
 In this heat equation, $u_h$ and $v_h$ are two variables that control the strategy.
 
-Now discuss g, evaporation rate per square.
-As Figure 3 shows, water evaporate into air and air humidity increases, until it saturate. According to empirical formula in [], we know that
+Now let's discuss g, evaporation rate per square.
+As Figure 3 shows, water evaporates into air and air humidity increases, until it is saturate. According to empirical formula in [], we know that
 \begin{equation}
  g=\frac{(25+19v)({x_s}-x)}{3600}
 \end{equation}
-in which v is the velocity of air, ${x_s}$ is humidity ratio in saturated air, $x$ is humidity ratio in air.
+in which v is the velocity of air, ${x_s}$ is humidity ratio in saturated air, $x$ is unsaturated humidity ratio in air.
 Considering the humidity ratio in the air, it indicates
 \begin{equation}
  x=x_0+\int \frac{Ag}{\rho V_a}dt
 \end{equation}
-in which, $x_0$ is the initial humidity ratio in the air, $\rho$ is density of water, $V_a$ is the total air volume of surrounding air.
+in which $x_0$ is the initial humidity ratio in the air, $\rho$ is the density of water, $V_a$ is the total volume of surrounding air.
 
-Combing the two equations and differentiating, we get a ordinary partial equation
+Combing and differentiating two equations, we get an ordinary partial equation
 \begin{equation}
  \frac{3600}{25+19v} \frac{dg}{dt}=\frac{A}{\rho {V_a}}
 \end{equation}
@@ -265,7 +267,7 @@ Solving the equation, we get the solution
 \subsection{Initial-Boundary Value Condition}
 \label{initial-boundary value condition}
 
-Boundary value condition is quite essential in partial differential equations. In our model, water is not a regular research object.
+Boundary value conditions are quite essential in partial differential equations. In our model, water is not a regular research object.
 Thus boundary value condition is complex.
 
 The boundary of water consists of four parts: water-air boundary, water-person boundary, water-bathtub boundary, and the square for faucet. We denote them as
@@ -276,28 +278,28 @@ as the Dirichlet value condition. That is
 \begin{equation}
  u=u_i, (x,y,z)\in {\Gamma}_i, i=2.4
 \end{equation}
-In the equation, $u_2$ is the surface temperature of person. We assume it is constant. $u_4$ is the temperature of hot water.
+In the equation, $u_2$ is the surface temperature of the person. We assume it is constant. $u_4$ is the temperature of hot water.
 
 The boundary value condition of ${\Gamma}_1$ and ${\Gamma}_3$ could be considered as the third boundary value condition approximately. That is
 \begin{equation}
- k\frac{\vartheta u}{\vartheta n}+{{\gamma}_i}u={{\gamma}_i}{u_i}, (x,y,z)\in {\Gamma}_i
+ k\frac{\partial u}{\partial n}+{{\gamma}_i}u={{\gamma}_i}{u_i}, (x,y,z)\in {\Gamma}_i
 \end{equation}
-In the equation, i=1,3, and $u_i$ is the temperature of contact material,
+In the equation, i=1 or 3 and $u_i$ is the temperature of contact material,
 ${\gamma}_i$ is the heat exchange coefficient of ${\Gamma}_i$.
 
-In the equation above, $u_1$, $u_3$ are temperatures of air and bathtub, they are time-dependant functions. It takes several steps to calculate them.
+In the equation above, $u_1$, $u_3$ are temperatures of air and bathtub, and they are time-dependant functions. It takes several steps to calculate them.
 
-Consider the temperature of air, $u_1$. Heat change of air consists of two ways, heat conduction and evaporation.
+Consider the temperature of air, $u_1$. Heat exchange of air consists of two ways, heat conduction and evaporation.
 
 In our model, we assume the temperature of water is equilibrium throughout the bathtub initially.
 
 \subsection{PDE Solution}
 \label{sec:PDE solution}
-Since our equations are complex and the region is quite irregular, it's impossible to get a regular solution. Finite element method is normally adopted to deal with this problem.
+Since our equations are complex and the region is quite irregular, it's impossible to get a regular solution. Finite element method is normally adopted to deal with this kind of problem.
 
-We use Partial Differential Equation Toolbox in matlab to solve our equations. Partial Differential Equation Toolbox makes use of finite element method to discrete irregular geometry and calculate a relatively precise solution. get solution of temperature corresponding to different $u_h$ and $v_h$. By comparing temperature distribution, we choose proper parameters as the best strategy.
+We use Partial Differential Equation Toolbox in matlab to solve our equations. Partial Differential Equation Toolbox makes use of finite element method to separate irregular geometry and calculate a relatively precise solution, get solution of temperature corresponding to different $u_h$ and $v_h$. By comparing temperature distribution, we choose proper parameters as the best strategy.
 
-First, we build a 3D geometry model to simulate a proper-size bathtub, as shown in Figure 2. Matlab divided the geometry into several elements.
+First, we build a 3D geometry model to simulate a proper-size bathtub, as it shown in Figure 2. Matlab divided the geometry into several elements.
 
 Then we input the heat equation and initial-boundary value conditions. Boundary value conditions are different in three parts.
 

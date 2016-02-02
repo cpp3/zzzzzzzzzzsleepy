@@ -33,7 +33,7 @@
 
 \begin{document}
 
-\title{Human Capital Model} \date{\today{}}
+\title{Take A Relaxing Bath} \date{\today{}}
 \maketitle
 
 \tableofcontents
@@ -48,10 +48,10 @@
 We are required to build a mathematical model to solve the problem of heating water in bathtub. Thus we have some subproblems:
 \begin{itemize}
 \item Build a basic model that demonstrates the change of the temperature in the bathtub in space and time without other interventions.
-\item Figure out the influence of parameters such as the shape of the bathtub or the motions made by the person or so.
+\item Figure out the influence of parameters such as the shape of the bathtub or the motions made by the bather or so.
 \item Propose a strategy to keep the temperature as even as possible.
 \end{itemize}
-In the first step, we build the simplest model. The shape of the bathtub is a cuboid, and the person will stay still. In the second step, the person moves slowly and the shape of the bathtub changes. In the third step, we develop the conclusion of the strategy.
+In the first step, we build the simplest model. The shape of the bathtub is a cuboid, and the bather will stay still. In the second step, the bather moves slowly and the shape of the bathtub changes. In the third step, we develop the conclusion of the strategy.
 
 \section{Terminology}
 \label{sec:terminology}
@@ -65,7 +65,7 @@ Definitions of symbols employed in this paper are listed in Table \ref{1_t} and 
   $\rho$         &Density of water \\
   ${\rho}_a$     &Density of air \\
   ${\gamma}_1$   &Heat exchange coefficient between water and air \\
-  ${\gamma}_2$   &Heat exchange coefficient between water and person \\
+  ${\gamma}_2$   &Heat exchange coefficient between water and bather \\
   ${\gamma}_3$   &Heat exchange coefficient between water and bathtub \\
   $C_w$          &Specific heat capacity of water \\
   $C_a$          &Specific heat capacity of air \\
@@ -91,7 +91,7 @@ Definitions of symbols employed in this paper are listed in Table \ref{1_t} and 
   $u$            &Temperature of water \\
   $u$            &Temperature of water when t=0 \\
   $u_1$          &Temperature of air \\
-  $u_2$          &Temperature of person's surface \\
+  $u_2$          &Temperature of bather's surface \\
   $u_3$          &Temperature of bathtub \\
   $u_h$          &Temperature of hot water from faucet \\
   $v_h$          &Velocity of hot water from faucet \\
@@ -104,7 +104,7 @@ Definitions of symbols employed in this paper are listed in Table \ref{1_t} and 
 \label{sec:assumptions-and-justifications}
 
 \begin{itemize}
-\item \textbf{assumption 1} The surface temperature of bathtub and the person keeps constant.
+\item \textbf{assumption 1} The surface temperature of bathtub and the bather keeps constant.
 
     Since human-being is temperature-constant, and bathtub contacts the ground, we can assume that they have no heat exchange.
 
@@ -118,11 +118,11 @@ Definitions of symbols employed in this paper are listed in Table \ref{1_t} and 
 
 Since the temperature of water in the bathtub is relatively uniform, the slight convection won't influence heat exchange. 
 
-\item \textbf{assumption 5} Water, bathtub, person and the surrounding air compose a closed heat system.
+\item \textbf{assumption 5} Water, bathtub, bather and the surrounding air compose a closed heat system.
 \end{itemize}
 
 % the main section of the paper
-\section{Water in the Bathtub Model}
+\section{PDE Model for Heating Water}
 \label{sec:human-capital-model}
 
 
@@ -133,7 +133,7 @@ Partial differential equations are widely used in natural science, engineering a
 It is natural to use partial differential equation to solve this physical problem.
 
 In our model, five factors account for heat transfer of water: heat exchange between water and air, heat
-exchange between water and the person, heat exchange between water and the bathtub, heat energy of hot water from the
+exchange between water and the bather, heat exchange between water and the bathtub, heat energy of hot water from the
 faucet and heat energy of water flow outside. According to thermology, we deduce the equation
 of water temperature in the bathtub. The initial-boundary value conditions are deduced according to
 Fourier theorem, vaporization equation\cite{1}.
@@ -151,7 +151,7 @@ In this part, we use physical theorem to deduce the heat conduction equation in 
 
 
 Figure \ref{1_p} shows thermal analysis of water in bathtub
-In the photo, $W_1$ is heat exchange between the person and water, while $W_2$ is heat from water vaporization. $W_3$ stands for heat exchange between the bathtub and water, and $W_4$ is heat conductivity between water and air. $W_5$ represents heat exchange between the bathtub and air, and $W_6$ is heat increasement with hot in-water.
+In the photo, $W_1$ is heat exchange between the bather and water, while $W_2$ is heat from water vaporization. $W_3$ stands for heat exchange between the bathtub and water, and $W_4$ is heat conductivity between water and air. $W_5$ represents heat exchange between the bathtub and air, and $W_6$ is heat increasement with hot in-water.
 
 \begin{figure}[htb]
   \centering
@@ -160,13 +160,13 @@ In the photo, $W_1$ is heat exchange between the person and water, while $W_2$ i
 \end{figure}
 
 First, we assume that the heat change of all the water in a tiny time $\Delta t$ from $t_1$ to $t_2fv$ is $\Delta Q$.
-As shown in Figure 1, heat of water in the bathtub exchanges with air, the person and the bathtub.
+As shown in Figure 1, heat of water in the bathtub exchanges with air, the bather and the bathtub.
 In addition, heat changes when the hot water flows in and the excess water flows out.
 Thus $\Delta Q$ is divided into five parts, i.e.
 \begin{equation}
  \Delta Q=\Delta Q_1+\Delta Q_2-\Delta Q_3-\Delta Q_4
 \end{equation}
-in which $\Delta Q_1$ is the heat transferred from air, person and bathtub,
+in which $\Delta Q_1$ is the heat transferred from air, bather and bathtub,
 $\Delta Q_2$ is the heat of the hot water from the faucet in $\Delta t$,
 $\Delta Q_3$ is the heat of the water flows away in $\Delta t$,
 $\Delta Q_4$ is the heat loss because of vaporization.
@@ -259,7 +259,7 @@ Solving the equation, we get the solution
 
 Boundary value conditions are quite essential in partial differential equations. In our model, water is not a regular object. Thus boundary value condition is complex.
 
-The boundary of water consists of four parts: water-air boundary, water-person boundary, water-bathtub boundary, and the square for faucet. We denote them as
+The boundary of water consists of four parts: water-air boundary, water-bather boundary, water-bathtub boundary, and the square for faucet. We denote them as
 ${\Gamma}_1$, ${\Gamma}_2$, ${\Gamma}_3$, ${\Gamma}_4$ respectively.
 
 Since bather is temperature-constant, the boundary value condition of ${\Gamma}_1$ and ${\Gamma}_3$ could be considered
@@ -267,7 +267,7 @@ as the Dirichlet value condition. That is
 \begin{equation}
  u=u_i, (x,y,z)\in {\Gamma}_i, i=2.4
 \end{equation}
-In the equation, $u_2$ is the surface temperature of the person. We assume it is constant. $u_4$ is the temperature of hot water.
+In the equation, $u_2$ is the surface temperature of the bather. We assume it is constant. $u_4$ is the temperature of hot water.
 
 The boundary value condition of ${\Gamma}_1$ and ${\Gamma}_3$ could be considered as the third boundary value condition approximately. That is
 \begin{equation}
@@ -278,7 +278,7 @@ ${\gamma}_i$ is the heat exchange coefficient of ${\Gamma}_i$.
 
 In the equation above, $u_3$ is temperature of bathtub, we assume it is unchangeable and as same as initial air temperature.
 
-$u_1$, the temperature of air, is time-dependant, because water vapor transfer heat to air. We can calculate $u_1$ by calculating the energy of water vapor evaporating in the air. Referencing the deduction of evaporation in the last section,
+$u_1$, the temperature of air, is time-dependant because water vapor transfer heat to air. We can calculate $u_1$ by calculating the energy of water vapor evaporating in the air. Referencing the deduction of evaporation in the last section,
 \begin{equation}
   u_1=u_0+\frac{C_w\rho}{C_a{{\rho}_a}} (x_s-x_0)(1-e^{-\lambda t})
 \end{equation}
@@ -289,7 +289,7 @@ In our model, we assume the temperature of water is equilibrium throughout the b
 
 \subsection{PDE Solution}
 \label{sec:PDE solution}
-Since our equations are complex and the region is quite irregular, it's impossible to get a analytical solution. Finite element method is normally adopted to deal with this kind of problem.
+Since our equations are complex and the region is quite irregular, it's impossible to get an analytical solution. Finite element method is normally adopted to deal with this kind of problem.
 
 We use Partial Differential Equation Toolbox in matlab to solve our equations. Partial Differential Equation Toolbox makes use of finite element method to separate irregular geometry, calculate a relatively precise solution, and get solution of temperature corresponding to different $u_h$ and $v_h$. By comparing temperature distributions, we choose proper parameters as the best strategy.
 
@@ -328,7 +328,7 @@ Our strategy focus on two variables, $v_h$ and $u_h$. We test about fifty pairs 
 
 In each operation, $u_2$ is taken as $33.5\,^{\circ}\mathrm{C}$
 and the initial value condition is $35\,^{\circ}\mathrm{C}$.
- We take 120s as time period. The following graphs show the results we get.
+ We set 120s as time period. The following graphs show the results we get.
 
 \begin{figure}[htb]
   \centering
@@ -444,8 +444,8 @@ Comparing the temperature distributions of each strategy, with least water waste
      \item We change the volume of the bathtub without changing the proportion. The result in the following table shows that with the same $v_h$, $u_h$ increases as volume increases; with the same $u_h$, $v_h$ increases as volume increases.
 \end{itemize}
 
-\subsection{Parameters of Person}
-\label{sec:parameters of person}
+\subsection{Parameters of Bather}
+\label{sec:parameters of bather}
 \begin{itemize}
 \item Comparing the temperature graphs with different shapes of the bather, we find when the shape gets more regular, $u_h$, $v_h$ decreases relatively.
 \item Change the volume of the bather. The result shows that, $u_h$, $v_h$ for best strategy increases when the volume increases.
@@ -524,7 +524,7 @@ The effect is that less heat is needed to keep the temperature. So $u_h$ for bes
 
 \label{LastPage}
 
-\section{Non-technical explanation}
+\section{Non-technical Explanation}
 
 Users,
 
